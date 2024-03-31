@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta content="width=device-width">
+    <title>Family facts</title>
+    <link rel="stylesheet" type="text/css" href="v2friends.css">
+</head>
+<body>
+    <div class="sect fourty"><h1 onclick="location.href='v2index.html'" class="pointer">Friends</h1></div>
+    <div class="sect eighty buff">
+        <div class="center sixty blobcontainer">
+            <button class="hundo buff2 blob padding" onclick="showhide()" id="select">- Select</button>
+            <div class="blobbycontent" id="blobbycontent">
+                <ul class="friend" data-name="Madeleine">Madeleine</ul>
+                <ul class="friend" data-name="Juliet">Juliet</ul>
+                <ul class="friend" data-name="Jack">Jack</ul>
+                <ul class="friend" data-name="Kaylee">Kaylee</ul>
+                <ul class="friend" data-name="Wyatt">Wyatt</ul>
+                <ul class="friend" data-name="Madeline">Madeline</ul>
+                <ul class="friend" data-name="Porter">Porter</ul>
+                <ul class="friend" data-name="Walter">Walter</ul>
+                <ul class="friend" data-name="Miles">Miles</ul>
+                <ul class="friend" data-name="Nora">Nora</ul>
+                <ul class="friend" data-name="Logan">Logan</ul>
+                <ul class="friend" data-name="Harper">Harper</ul>
+                <ul class="friend" data-name="Lennon">Lennon</ul>
+                <ul class="friend" data-name="Bill">Bill</ul>
+                <ul class="friend" data-name="Scott">Scott</ul>
+            </div>
+        </div><br><br>
+        <p class="center" id="freunde">Hello. These are some facts from my friends.</p><br>
+    </div>
+    <script>
+        function showhide() {
+            var x = document.getElementById("blobbycontent");
+            if (x.style.display === "block") {
+                x.style.display = "none"
+            } else {
+                x.style.display = "block"
+            }
+        }
+
+        var select = document.getElementById("select");
+        var freunde = document.getElementById("freunde");
+        var x = document.getElementById("blobbycontent");
+        
+        var friendData = {
+            "Madeleine": "- Lawyers used to be illegal in Georgia<br><br>- You aren't supposed to touch Spanish Moss because little bugs that give humans allergic reactions live in it. Although 100s of years ago, people used to stuff pillows with Spanish Moss",
+            "Juliet": "Bald Eagles chirp",
+            "Jack": "- 3% of Antarctica is made up of penguin pee. It's so cold that it freezes<br><br>- Cheetos were originally made as cow feed<br><br>- The Hollywood sign used to say 'Hollywoodland' to attract rich people to the housing development. The sign got old and the 'land' part was removed<br><br>- McDonald's Coke tastes better because Coca-Cola sends their syrup in metal containers while other fast food places get deliveries in plastic bags<br><br>- McDonald's Sprite tastes better because of the filtration system they have for the water<br><br>- A group of gorillas is called a band. Hence the name of the UK musical band, \"Gorillaz\"",
+            "Kaylee": "- Mona Lisa has no eyebrows<br><br>- The strongest muscle in the body is the tounge<br><br>- Ants only rest about 8 minutes in a 12 hour span<br><br>- Coca Cola bottles were originally green<br><br>- When the moon is directly overhead, you weight slightly less<br><br>- Camels have 3 eyelids",
+            "Wyatt": "As of June 2nd, 2023, since 2014, 49 people have been killed in Dollar Generals",
+            "Madeline": "- Every zebra has a different stripe pattern<br><br>- According to Leonardo Da Vinci, 2 supports are better than 3<br><br>- A lot of elevators have pee in them (NYC)",
+            "Porter": "- Bluejays are part of the crow family<br><br>- Whales can explode",
+            "Walter": "- The strongest hypothetical material is called 'nuclear spaghetti'<br><br>- A gram of uranium has 20 million calories<br><br>- Magenta is made up by the brain because it's not on the electromagnetic spectrum",
+            "Miles": "The hashtag symbol '#' is actually called an octothrope",
+            "Nora": "- Sharks are the only fish that can blink with both eyes<br><br>- Almonds are part of the peach family",
+            "Logan": "- In Switzerland it's illegal to own just 1 guinea pig because they're social animals and would get lonely<br><br>- Ancient Romans used to put toast in wine for good health, thus we have 'raising a toast'<br><br>- The unicorn is the national animal of Scotland<br><br>- No US state has a 'Q' in its name<br><br>- The Easter Island heads have bodies<br><br>- According to a 1995 study, pigeons can tell the difference between Picasso and Monet<br><br>- The voice actors for Mickey and Minnie Mouse got married in real life<br><br>- Japan has over 300 kinds of Kit Kats<br><br>- Canada is south of Detroit<br><br>- 'Strengths' is the longest word in the English language with only one vowel",
+            "Harper": "Centipedes have 100 legs",
+            "Lennon": "The Eiffel Tower is taller in the summer",
+            "Bill": "The answer to life, the universe, and everything is 42",
+            "Scott": "Entropy is not a fad, it's the future"
+        }
+
+        document.querySelectorAll(".friend").forEach(function (ul) {
+            ul.addEventListener("click", function() {
+                var friendName = this.getAttribute("data-name");
+                select.innerHTML = friendName;
+                freunde.innerHTML = friendData[friendName];
+                x.style.display = "none";
+            });
+        });
+    </script>
+</body>
+</html>

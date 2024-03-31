@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta content="width=device-width">
+    <title>Family facts</title>
+    <link rel="stylesheet" type="text/css" href="v2family.css">
+</head>
+<body>
+    <div class="sect fourty"><h1 onclick="location.href='v2index.html'" class="pointer">Family</h1></div>
+    <div class="sect eighty buff">
+        <div class="center sixty blobcontainer">
+            <button class="hundo buff2 blob padding" onclick="showhide()" id="select">- Select</button>
+            <div class="blobbycontent" id="blobbycontent">
+                <ul class="family" data-name="Dad">Dad</ul>
+                <ul class="family" data-name="Mom">Mom</ul>
+                <ul class="family" data-name="Diane">Diane</ul>
+                <ul class="family" data-name="Richard">Richard</ul>
+                <ul class="family" data-name="Wendy">Wendy</ul>
+                <ul class="family" data-name="JP">JP</ul>
+            </div>
+        </div><br><br>
+        <p class="center eighty" id="familia">Hello. These are some facts from my family members.</p><br>
+    </div>
+    <script>
+        function showhide() {
+            var x = document.getElementById("blobbycontent");
+            if (x.style.display === "block") {
+                x.style.display = "none"
+            } else {
+                x.style.display = "block"
+            }
+        }
+
+        var select = document.getElementById("select");
+        var familia = document.getElementById("familia");
+        var x = document.getElementById("blobbycontent");
+
+        var familyData = {
+            "Dad": "Sevilla won 4-1 in PKs Europa League final. Bono had 2 saves",
+            "Mom": "Runza used to be called Runza Drive-Inn and Runza Hut",
+            "Diane": "- She is 5'10''<br><br>- She likes nutella<br><br>- Her favorite color is purple",
+            "Richard": "- He likes the Carolina Wren song (a bird)<br><br>- He likes Jar Jar Binks",
+            "Wendy": "- It's illegal to go whaling in Nebraska<br><br>- It's illegal to carry an ice cream cone in your pocket in Fremont",
+            "JP": "- There are over 2000 arches in Arches National Park<br><br>- The Inland Taipan is the most venomous snake",
+        }
+        
+        document.querySelectorAll(".family").forEach(function (ul) {
+            ul.addEventListener("click", function() {
+                var familyName = this.getAttribute("data-name");
+                select.innerHTML = familyName;
+                familia.innerHTML = familyData[familyName];
+                x.style.display = "none";
+            });
+        });
+        function dad() {  select.innerHTML = "Dad";     familia.innerHTML = Dad;     x.style.display = "none";}
+        function mom() {  select.innerHTML = "Mom";     familia.innerHTML = Mom;     x.style.display = "none";}
+        function ad() {   select.innerHTML = "Diane";   familia.innerHTML = Diane;   x.style.display = "none";}
+        function ur() {   select.innerHTML = "Richard"; familia.innerHTML = Richard; x.style.display = "none";}
+        function wendy() {select.innerHTML = "Wendy";   familia.innerHTML = Wendy;   x.style.display = "none";}
+        function jp() {   select.innerHTML = "JP";      familia.innerHTML = JP;      x.style.display = "none";}
+    </script>
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width">
+    <title>States</title>
+    <link rel="stylesheet" type="text/css" href="usstyle.css">
+</head>
+<body class="spc-cadet">
+    <h1 class="mouse thirtyfibe center pb" onclick="location.href='../index.html'">States</h1>
+    <div id="text">
+        <div class="ff sect"><h1 class="pointer" onclick="textOnly()" id="textOnly">Text only</h1></div>
+        <div class="sect ff buff nd" id="textOnlyDiv">
+            <div class="center sixty blobcontainer">
+                <select class="ff buff2 blob padding" id="stateSelect">
+                    <option value="- Select" id="selected" selected>- Select</option>
+                    <option value="Alabama">Alabama</option>
+                    <option value="Alaska">Alaska</option>
+                    <option value="Arizona">Arizona</option>
+                    <option value="Arkansas">Arkansas</option>
+                </select>
+            </div><br><br>
+            <p class="center textparagraph" id="usText">
+                <span id="statename"></span> was established on <span id="established"></span><br>
+                Nickname: <span id="nickname"></span><br>
+                Motto: <span id="motto"></span><br>
+                Demonym: <span id="demonym"></span><br>
+                Capital: <span id="capital"></span><br>
+                Largest city: <span id="largestCity"></span><br>
+                Postal abbr: <span id="postalAbbr"></span><br>
+                Traditional abbr: <span id="traditionalAbbr"></span><br>
+                Number of counties: <span id="numCounties"></span><br>
+                State bird: <span id="stateBird"></span><br>
+                State tree: <span id="stateTree"></span><br>
+                State flower: <span id="stateFlower"></span><br>
+            </p>
+        </div>
+    </div>
+    
+    <div id="outline">
+        <div class="ff sect"><h1 class="pointer" onclick="nice()" id="nice">Nice</h1></div>
+        <div class="gc nd" id="notTextOnly">
+            <div class="container">
+                <p class="fbutt f1" id="back">&#60;</p>
+                <div class="f5" id="dddiv">
+                    <p class="flex-item ddcontainer" id="st-nm" onclick="showhide()">State</p>
+                    <div class="ddcontent nd" id="ddcontent">
+                        <ul id="stateslist"></ul>
+                    </div>
+                </div>
+                <p class="fbutt f1" id="next">&#62;</p>
+            </div>
+
+            <div class="row f1"><!--wood-->
+                <div class="column f3">
+                    <div class="row">
+                        <div class="column f2"><div class="row f1">
+                                <p class="flex-item2 wood f2">Est.</p>
+                                <p class="flex-item2 wood f1 square" id="mth">0</p>
+                                <p class="flex-item2 wood f1 square" id="day">0</p>
+                                <p class="flex-item2 wood f1 square" id="yrs">0</p>
+                        </div></div>
+                        <div class="column f3"><div class="row f1">
+                                <p class="flex-item2 wood f1">A.K.A.</p>
+                                <p class="flex-item2 wood f4" id="nn"></p>
+                        </div></div>
+                    </div>
+                    <div class="row">
+                        <p class="flex-item2 wood" id="mot"></p>
+                    </div>
+                </div>
+                
+            </div>
+
+            <div class="row f1"><!--city-->
+                <div class="column right f3">
+                    <p class="flex-item2 city city2">Capital:</p>
+                    <p class="flex-item2 city city2">Largest City:</p>
+                </div>
+                <div class="column left f3">
+                    <p class="flex-item2 city" id="cap"></p>
+                    <p class="flex-item2 city" id="lrg"></p>
+                </div>
+                <p class="flex-item2 city f2" id="dEm"></p>
+            </div>
+
+            <div class="row"><!--orange/nature-->
+                <div class="column f1">
+                    <p class="flex-item2 orng f1" id="pa"></p>
+                    <p class="flex-item2 orng f1" id="cts"></p>
+                </div>
+                <div class="column f6">
+                    <div class="row">
+                        <p class="flex-item2 orng f1" id="ta"></p>
+                        <p class="flex-item2 natr f2" id="tree"></p>
+                    </div>
+                    <div class="row">
+                        <p class="flex-item2 natr f1" id="bird"></p>
+                        <p class="flex-item2 natr f1" id="flower"></p>
+                    </div>
+                </div>
+            </div>
+            <div class="row"><p id="est" style="display: none"></p></div>
+        </div>
+    </div>
+    
+
+    <script src="usarrays.js"></script>
+    <script src="usmain.js"></script>
+    <script src="testUSarrays.js"></script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+body {
+    font-family: monospace;
+    background-color: black;
+    color: white;
+    user-select: none;
+}
+h1 {
+    text-align: center;
+    margin-top: 25px;
+    font-size: 3.5em;
+    cursor: default;
+    font-family: fantasy;
+}
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    row-gap: 10px;
+    background-color: transparent;
+    padding: 5px;
+    margin: auto;
+    width: 40%;
+}
+.grid > button {
+    background-color: darkslategray;
+    text-align: center;
+    font-size: calc(var(--scale, 1) * 1rem);
+    font-family: monospace;
+    cursor: pointer;
+    aspect-ratio: 1/1;
+    scale: 80%;
+    color: white;
+    border-radius: 15%;
+    border-color: transparent;
+    float: left;
+}
+.btn-hmpg {--scale: 2;}
+
+.b1, .b2, .b3, .b4 {transition-duration: .3s;}
+.b1:hover {background-color: #800080;}
+.b2:hover {background-color: #867979;}
+.b3:hover {background-color: #cca43b; color: black;}
+.b4:hover {background-color: #31a353;}

@@ -1,0 +1,180 @@
+body {
+    font-family: monospace;
+    background-color: #272b52;
+    color: white;
+    user-select: none;
+}
+h1 {
+    text-align: center;
+    margin-top: 25px; 
+    font-size: 3.5em; 
+    cursor: default; 
+    font-family: fantasy;
+}
+p {
+    font-size: 1.5rem;
+    margin: auto;
+    user-select: none;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.mouse {cursor: pointer;}
+.pb {padding-bottom: 25px;}
+.center {margin: auto;}
+.sixty {width: 60%;}
+.thirtyfibe {width: 35%;}
+
+/*geo*/
+.gc {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    height: 15vh;
+    width: 45%;
+    margin: auto;
+}
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.row /*grid item*/ {
+    display: flex;
+    flex-direction: row;
+}
+.column /*column*/ {
+    display: flex;
+    flex-direction: column;
+}
+.flex-item {
+    flex: 6;
+    background-color: #28507b;
+    margin: 5px;
+    padding: 10px;
+    font-size: calc(var(--scale, 1) * 1.75rem);
+    border-radius: 15px;
+    cursor: pointer;
+}
+.fbutt {
+    flex: 1;
+    background-color: #28507b;
+    padding: 10px;
+    margin: 5px;
+    font-size: calc(var(--scale, 1) * 2rem);
+    font-weight: bold;
+    border-color: transparent;
+    cursor: pointer;
+    border-radius: 15px;
+}
+.flex-item2 {
+    flex: 2;
+    background-color:darkslategray;
+    margin: 5px;
+    padding: 10px;
+    font-size: 100%;
+    border-radius: 15px;
+    font-size: calc(var(--scale, 1) * 1.25rem);
+    border-width: 3px;
+    border-color: black;
+}
+
+.wood {background-color: #7f5539; color: #ede0d4;}
+.city {background-color: #343A40; color: #E9ECEF;}
+.orng {background-color: #ff7b00; color: #ffeede;}
+.natr {background-color: #006400; color: #b3ffb3;}
+
+.square {border-radius: 12px; margin: 3px;}
+
+.left {text-align: left;}
+.right {text-align: right;}
+.ssmal {font-size: calc(var(--scale, 1) * .9rem);}
+/*.f ____ whatever the flex is*/
+.f1 {flex: 1;}
+.f2 {flex: 2;}
+.f3 {flex: 3;}
+.f4 {flex: 4;}
+.f5 {flex: 5;}
+.f6 {flex: 6;}
+
+.foOfo {/*404*/
+    font-size: 15rem;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+}
+
+.ddcontainer {
+    position: relative;
+    margin: auto;
+}
+.ddcontent {
+    max-height: 300px;
+    overflow-y: scroll;
+    background-color: #28507b;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    font-size: 1rem;
+}
+.ddcontainer, .ddcontent {box-sizing: border-box;}
+.stul {
+    padding-inline-start: 15px;
+    margin: 10px;
+    border-radius: 5px;
+    scrollbar-color: #3469a2 #28507b;
+    cursor: pointer;
+}
+
+.nd {display: none;}
+.corner {border-bottom-left-radius: 0px; border-bottom-right-radius: 0px;}
+
+/*TEXT ONLY*/
+.pointer {cursor: pointer;}
+.sect {
+    background-color: #171931;
+    color: white;
+    margin: auto;
+    margin-top: 25px;
+    font-family: monospace;
+    border-radius: 10px;
+}
+.ff {width: 45%;}
+.buff {padding: 10px 30px;}
+.buff2 {margin-top: 10px; margin-bottom: 10px;};
+.pointer:hover {cursor: pointer;}
+.padding {padding-inline-start: 15px;}
+.hundo {width: 100%;}
+.textparagraph {text-align: left; width: 80%; color: #5c65cb;}
+span {color: #ced4da;}
+.noMouse {cursor: not-allowed;}
+
+.blob {
+    background-color: #0f101f;
+    color: white;
+    height: 50px;
+    border-width: 2.5px;
+    border-style: solid;
+    border-radius: 10px;
+    text-align: left;
+    width: 100%;
+    margin: auto;
+}
+.blobcontainer {position: relative; margin: auto;}
+.blob:hover {
+    border-style: dotted;
+    border-color: black;
+    cursor: pointer;
+    transition-duration: .5s;
+}
+.blob:not(:hover) {transition-duration: .5s;}
+.blobbycontent {
+    display: none;
+    position: absolute;
+    width: 100%;
+    max-height: 250px;
+    overflow-y: scroll;
+    background-color: #0f101f;
+}

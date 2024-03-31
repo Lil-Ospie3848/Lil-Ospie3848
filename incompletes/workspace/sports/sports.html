@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width">
+    <title>Sports</title>
+    <link rel="stylesheet" type ="text/css" href="sports.css">
+</head>
+<body>
+    <div class="center" onclick="location.href='../index.html'"><h1>Sports Teams</h1></div><br>
+    <div class="container center forty row"><!--selection-->
+        <p class="flex-item" onclick="togg('nfl')">NFL</p>
+        <p class="flex-item" onclick="togg('nba')">NBA</p>
+        <p class="flex-item" onclick="togg('nhl')">NHL</p>
+        <p class="flex-item" onclick="togg('mlb')">MLB</p>
+        <p class="flex-item" onclick="togg('mls')">MLS</p>
+    </div>
+
+    <div class="grid center nd" id="nfl">
+        <div class="layout"><p class="label">AFC East</p> <div class="teams"><p class="team f1 afc"></p><p class="team f1 afc"></p><p class="team f1 afc"></p><p class="team f1 afc"></p></div></div>
+        <div class="layout"><p class="label">NFC East</p> <div class="teams"><p class="team f1 nfc"></p><p class="team f1 nfc"></p><p class="team f1 nfc"></p><p class="team f1 nfc"></p></div></div>
+        <div class="layout"><p class="label">AFC North</p><div class="teams"><p class="team f1 afc"></p><p class="team f1 afc"></p><p class="team f1 afc"></p><p class="team f1 afc"></p></div></div>
+        <div class="layout"><p class="label">NFC North</p><div class="teams"><p class="team f1 nfc"></p><p class="team f1 nfc"></p><p class="team f1 nfc"></p><p class="team f1 nfc"></p></div></div>
+        <div class="layout"><p class="label">AFC South</p><div class="teams"><p class="team f1 afc"></p><p class="team f1 afc"></p><p class="team f1 afc"></p><p class="team f1 afc"></p></div></div>
+        <div class="layout"><p class="label">NFC South</p><div class="teams"><p class="team f1 nfc"></p><p class="team f1 nfc"></p><p class="team f1 nfc"></p><p class="team f1 nfc"></p></div></div>
+        <div class="layout"><p class="label">AFC West</p> <div class="teams"><p class="team f1 afc"></p><p class="team f1 afc"></p><p class="team f1 afc"></p><p class="team f1 afc"></p></div></div>
+        <div class="layout"><p class="label">NFC West</p> <div class="teams"><p class="team f1 nfc"></p><p class="team f1 nfc"></p><p class="team f1 nfc"></p><p class="team f1 nfc"></p></div></div>
+    </div>
+    <div class="grid3 center nd" id="nba">
+        <div class="layout Atlantic"> <p class="label">Atlantic </p><div class="teams"><p class="team nba"></p><p class="team nba"></p><p class="team nba"></p><p class="team nba"></p><p class="team nba"></p></div></div>
+        <div class="layout Central">  <p class="label">Central  </p><div class="teams"><p class="team nba"></p><p class="team nba"></p><p class="team nba"></p><p class="team nba"></p><p class="team nba"></p></div></div>
+        <div class="layout Southeast"><p class="label">Southeast</p><div class="teams"><p class="team nba"></p><p class="team nba"></p><p class="team nba"></p><p class="team nba"></p><p class="team nba"></p></div></div>
+        <div class="layout Northwest"><p class="label">Northwest</p><div class="teams"><p class="team nba"></p><p class="team nba"></p><p class="team nba"></p><p class="team nba"></p><p class="team nba"></p></div></div>
+        <div class="layout Pacific">  <p class="label">Pacific  </p><div class="teams"><p class="team nba"></p><p class="team nba"></p><p class="team nba"></p><p class="team nba"></p><p class="team nba"></p></div></div>
+        <div class="layout Southwest"><p class="label">Southwest</p><div class="teams"><p class="team nba"></p><p class="team nba"></p><p class="team nba"></p><p class="team nba"></p><p class="team nba"></p></div></div>
+    </div>
+    <div class="grid center nd" id="nhl">
+        <div class="layout Atlantic">    <p class="label">Atlantic    </p><div class="teams"><p class="team nhl"></p><p class="team nhl"></p><p class="team nhl"></p><p class="team nhl"></p><p class="team nhl"></p><p class="team nhl"></p><p class="team nhl"></p><p class="team nhl"></p></div></div>
+        <div class="layout Metropolitan"><p class="label">Metropolitan</p><div class="teams"><p class="team nhl"></p><p class="team nhl"></p><p class="team nhl"></p><p class="team nhl"></p><p class="team nhl"></p><p class="team nhl"></p><p class="team nhl"></p><p class="team nhl"></p></div></div>
+        <div class="layout Central">     <p class="label">Central     </p><div class="teams"><p class="team nhl"></p><p class="team nhl"></p><p class="team nhl"></p><p class="team nhl"></p><p class="team nhl"></p><p class="team nhl"></p><p class="team nhl"></p><p class="team nhl"></p></div></div>
+        <div class="layout Pacific">     <p class="label">Pacific     </p><div class="teams"><p class="team nhl"></p><p class="team nhl"></p><p class="team nhl"></p><p class="team nhl"></p><p class="team nhl"></p><p class="team nhl"></p><p class="team nhl"></p><p class="team nhl"></p></div></div>
+    </div>
+    <div class="grid center nd" id="mlb">
+        <div class="layout"><p class="label">AL Central</p><div class="teams"><p class="team mlb"></p><p class="team mlb"></p><p class="team mlb"></p><p class="team mlb"></p><p class="team mlb"></p></div></div>
+        <div class="layout"><p class="label">NL Central</p><div class="teams"><p class="team mlb"></p><p class="team mlb"></p><p class="team mlb"></p><p class="team mlb"></p><p class="team mlb"></p></div></div>
+        <div class="layout"><p class="label">AL East</p>   <div class="teams"><p class="team mlb"></p><p class="team mlb"></p><p class="team mlb"></p><p class="team mlb"></p><p class="team mlb"></p></div></div>
+        <div class="layout"><p class="label">NL East</p>   <div class="teams"><p class="team mlb"></p><p class="team mlb"></p><p class="team mlb"></p><p class="team mlb"></p><p class="team mlb"></p></div></div>
+        <div class="layout"><p class="label">AL West</p>   <div class="teams"><p class="team mlb"></p><p class="team mlb"></p><p class="team mlb"></p><p class="team mlb"></p><p class="team mlb"></p></div></div>
+        <div class="layout"><p class="label">NL West</p>   <div class="teams"><p class="team mlb"></p><p class="team mlb"></p><p class="team mlb"></p><p class="team mlb"></p><p class="team mlb"></p></div></div>
+    </div>
+    <div class="grid center nd" id="mls">
+        <div class="layout Eastern"><p class="label">Eastern</p><div class="teams"><p class="team mls"></p><p class="team mls"></p><p class="team mls"></p><p class="team mls"></p><p class="team mls"></p><p class="team mls"></p><p class="team mls"></p><p class="team mls"></p><p class="team mls"></p><p class="team mls"></p><p class="team mls"></p><p class="team mls"></p><p class="team mls"></p><p class="team mls"></p><p class="team mls"></p></div></div>
+        <div class="layout Western"><p class="label">Western</p><div class="teams"><p class="team mls"></p><p class="team mls"></p><p class="team mls"></p><p class="team mls"></p><p class="team mls"></p><p class="team mls"></p><p class="team mls"></p><p class="team mls"></p><p class="team mls"></p><p class="team mls"></p><p class="team mls"></p><p class="team mls"></p><p class="team mls"></p><p class="team mls"></p><p class="team mls"></p></div></div>
+    </div>
+
+    <script src="sports.js"></script>
+</body>
+</html>

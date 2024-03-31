@@ -1,0 +1,60 @@
+body {background-color: black; font-family: monospace; color: white;}
+h1 {text-align: center; margin-top: 25px; cursor: default; font-size: 4em;}
+p {font-size: 2em;}
+
+.nd {display: none;}
+
+.fourty {width: 40%;}
+.fifty {width: 50%;}
+.sixty {width: 60%;}
+.eighty {width: 80%;}
+.hundo {width: 100%;}
+.sect {
+    background-color: teal;
+    color: white;
+    margin: auto;
+    margin-top: 25px;
+    font-family: monospace;
+    border-radius: 10px;
+}
+
+.center {margin: auto;}
+.buff {padding: 10px 30px;}
+.buff2 {margin-top: 10px; margin-bottom: 10px;}
+.pointer:hover {cursor: pointer;}
+.padding {padding-inline-start: 15px;}
+
+.blob {
+    background-color: rgb(0, 100, 100);
+    color: white;
+    height: 50px;
+    border-width: 3px;
+    border-radius: 10px;
+    text-align: left;
+}
+.blobcontainer {position: relative; margin: auto;}
+.blob:hover {
+    border-style: dotted;
+    border-color: black;
+    background-color: transparent;
+    cursor: pointer;
+    transition-duration: .5s;
+}
+.blob:not(:hover) {transition-duration: .5s;}
+.blobbycontent {
+    display: none;
+    position: absolute;
+    width: 100%;
+    max-height: 250px;
+    overflow-y: scroll;
+    background-color:rgb(0, 100, 100);
+}
+
+.blobcontainer ul:hover {background-color: teal; cursor: pointer; border-color: black;}
+.blobcontainer:hover {background-color: teal;}
+ul {
+    padding-inline-start: 15px;
+    font-size: 1.75em;
+    margin: 10px;
+    border-radius: 5px;
+}

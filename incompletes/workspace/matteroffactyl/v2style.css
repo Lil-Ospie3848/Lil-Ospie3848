@@ -1,0 +1,44 @@
+body {background-color: black; font-family: monospace; color: white;}
+h1 {text-align: center; margin-top: 25px; font-size: 3.5em; cursor: default;}
+
+/*g-c means grid container*/
+.g-c {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    background-color: transparent;
+    padding: 5px;
+    margin: auto;
+    width: 60%;
+}
+.g-c > button {
+    background-color: darkslategray;
+    text-align: center;
+    font-size: 200%;
+    font-family: monospace;
+    cursor: pointer;
+    aspect-ratio: 1/1;
+    scale: 80%;
+    color: white;
+    border-radius: 15%;
+    border-color: transparent;
+    float: left;
+}
+
+.item1:hover, .item2:hover, .item3:hover {
+    border-width: 3px;
+    border-color: white;
+    transition-duration: .5s;
+}
+.item1:not(:hover), .item2:not(:hover), .item3:not(:hover) {
+    transition-duration: .5s;
+}
+
+.item1:hover {background-color: midnightblue;}
+.item2:hover {background-color: firebrick;}
+.item3:hover {background-color: teal;}
+.showOnHover {display: block; transition-duration: .5s;}
+
+/*GENERAL*/
+.center {margin: auto; width: 50%;}
+.mouse {cursor: pointer;}

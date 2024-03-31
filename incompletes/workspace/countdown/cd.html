@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width">
+    <title>Countdowns</title>
+    <link rel="stylesheet" type ="text/css" href="cd.css">
+</head>
+<body>
+    <div id="div1" class="center" onclick="location.href='../index.html'"><h1>Countdowns:</h1></div>
+    <div id="div2" class="center">
+        <p id="today" style="text-decoration: underline;"></p><br><br>
+        <p id="id"></p><br><!--4th of July-->
+        <p id="hw"></p><br><!--Halloween-->
+        <p id="cm"></p><br><!--Christmas-->
+        <p id="nyd"></p><br><br><!--New Year's Day-->
+        <p id="mwc"></p><br><!--Men's World Cup-->
+        <p id="wwc"></p><br><br><br><br><br><!--Women's World Cup-->
+        <p style="font-family: cursive;">Let me know if I'm behind somewhere or if I should add something</p>
+    </div>
+
+    <script>
+        date = new Date();
+        year = date.getFullYear();
+        month = date.getMonth() + 1;
+        day = date.getDate();
+        document.getElementById("today").innerHTML = month + "/" + day + "/" + year;
+        var now = new Date(document.getElementById("today").textContent);
+        
+        /*dID means difference in days or dIT for time*/
+        var newYear = new Date("01/01/2025");
+        var dIDny = newYear.getTime() - now.getTime();
+        var dITny = dIDny / (1000 * 3600 * 24);
+        document.getElementById("nyd").innerHTML = "Days until New Year's: " + Math.round(dITny);
+        
+        var wwc = new Date("06/01/2027");
+        var dIDwwc = wwc.getTime() - now.getTime();
+        var dITwwc = dIDwwc / (1000 * 3600 * 24);
+        document.getElementById("wwc").innerHTML = "Days until the FIFA Women's World Cup 2027: " + Math.round(dITwwc);
+
+        var mwc = new Date("06/11/2026");
+        var dIDmwc = mwc.getTime() - now.getTime();
+        var dITmwc = dIDmwc / (1000 * 3600 * 24);
+        document.getElementById("mwc").innerHTML = "Days until the FIFA Men's World Cup 2026: " + Math.round(dITmwc);
+
+        var id = new Date("07/04/2024");
+        var dIDid = id.getTime() - now.getTime();
+        var dITid = dIDid / (1000 * 3600 * 24);
+        document.getElementById("id").innerHTML = "Days until the 4th of July: " + Math.round(dITid);
+
+        var hw = new Date("10/31/2024");
+        var dIDhw = hw.getTime() - now.getTime();
+        var dIThw = dIDhw / (1000 * 3600 * 24);
+        document.getElementById("hw").innerHTML = "Days until Halloween: " + Math.round(dIThw);
+
+        var cm = new Date("12/25/2024");
+        var dIDcm = cm.getTime() - now.getTime();
+        var dITcm = dIDcm / (1000 * 3600 * 24);
+        document.getElementById("cm").innerHTML = "Days until Christmas: " + Math.round(dITcm);
+    </script>
+</body>
+</html>

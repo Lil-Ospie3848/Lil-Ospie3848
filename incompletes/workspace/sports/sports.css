@@ -1,0 +1,87 @@
+body {
+    background-color: black;
+    font-family: monospace;
+    text-align: center;
+    color: white;
+    user-select: none;
+}
+h1 {
+    margin-top: 25px;
+    font-size: 3rem;
+    cursor: pointer;
+    min-width: 70%;
+    margin-bottom: 10px;
+}
+.center {margin: auto;}
+p {
+    font-size: 1.5em;
+    font-family: monospace;
+    margin: auto;
+}
+.row {display: flex; flex-direction: row;}
+.column {display: flex; flex-direction: column;}
+.f1 {flex: 1;}
+.flex-item {
+    background-color: #6A8322;
+    padding: 10px;
+    margin: 5px;
+    font-size: calc(var(--scale, 1) * 2rem);
+    border-radius: 10px;
+    cursor: pointer;
+    flex: 1;
+}
+.flex-item:hover {background-color: #91B32E; transition-duration: .3s;}
+.flex-item:not(:hover) {background-color: #6A8322; transition-duration: .3s;}
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.forty {width: 40%;}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 45%;
+    padding-top: 25px;
+}
+.grid3 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 45%;
+    padding-top: 25px;
+}
+.layout {
+    background-color: transparent;
+    width: 90%;
+    margin: auto;
+    margin-bottom: 10px;
+    padding: 5px;
+}
+.label {
+    font-size: calc(var(--scale, 1) * 2rem);
+    font-family: fantasy;
+}
+.teams {
+    text-align: left;
+    width: 100%;
+}
+.team {
+    font-family: monospace;
+    margin: 5px;
+    padding-inline-start: 10px;
+    font-size: 120%;
+    text-align: center;
+    border-radius: 12.5px;
+    aspect-ratio: 7/1;
+}
+.afc {background-color: coral;}
+.nfc {background-color: cornflowerblue;}
+
+.nba {background-color: dodgerblue;}
+.nhl {background-color: forestgreen;}
+.mlb {background-color: darkorchid;}
+.mls {background-color: sienna;}
+
+.nd {display: none;}
