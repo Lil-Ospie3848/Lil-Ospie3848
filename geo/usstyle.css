@@ -150,6 +150,7 @@ p {
 .textparagraph {text-align: left; width: 80%; color: #5c65cb;}
 span {color: #ced4da;}
 .noMouse {cursor: not-allowed;}
+select {font-size: 1.5rem;}
 
 .blob {
     background-color: #0f101f;
