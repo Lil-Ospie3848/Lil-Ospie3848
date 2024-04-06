@@ -33,8 +33,9 @@ p {
     justify-content: center;
     align-items: center;
     height: 15vh;
-    width: 45%;
+    width: 80%;
     margin: auto;
+    max-width: 1000px;
 }
 .container {
     display: flex;
