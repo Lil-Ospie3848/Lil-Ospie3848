@@ -18,6 +18,7 @@ h1 {
     column-gap: 5px;
     margin: auto;
     width: 55%;
+    min-width: 864px;
 }
 .grid > button {
     background-color: darkslategray;
