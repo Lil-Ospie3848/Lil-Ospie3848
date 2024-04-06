@@ -95,6 +95,14 @@ const stateData = {
     ],
 };
 
+var selectElement = document.getElementById("stateSelect");
+statename.forEach(function(state) {
+    var option = document.createElement("option");
+    option.value = state;
+    option.textContent = state;
+    selectElement.appendChild(option);
+})
+
 function updateStateData(state) {
     let index;
     if (statename === "state") {
