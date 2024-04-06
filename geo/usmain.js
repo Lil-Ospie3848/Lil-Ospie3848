@@ -76,33 +76,6 @@ document.addEventListener("keyup", function(event) {
     if (event.key === 'ArrowLeft') {backAsTate();}
 })
 
-function showhide() {
-    document.getElementById("ddcontent").classList.toggle('nd');
-    document.getElementById("st-nm").classList.toggle('corner');
-}
-
-var stnmElem = document.getElementById('st-nm');
-var ddcontent = document.getElementById('ddcontent');
-var ul = document.getElementById('stateslist');
-statename.forEach(function(value) {
-    var li = document.createElement('ul');
-    li.textContent = value;
-    
-    li.style.cursor = 'pointer';
-    li.style.transition = 'background-color 0.3s';
-    li.addEventListener('mouseover', function() {li.style.backgroundColor = '#3469A2'});
-    li.addEventListener('mouseout', function() {li.style.backgroundColor = '#28507b'})
-    li.addEventListener('click', function() {udSel(value);})
-
-    ul.appendChild(li);
-});
-
-function udSel(state) /*updateSelection*/{
-    stnmElem.innerHTML = state;
-    ddcontent.innerHTML = window[state];
-    ddcontent.style.display = "none";
-}
-
 /*text only*/
 function textOnly() {
     document.getElementById("outline").classList.toggle('nd');
@@ -114,6 +87,14 @@ function toggleDD() {document.getElementById("blobbycontent").classList.toggle('
 function nice() {
     document.getElementById("text").classList.toggle('nd');
     var nice = document.getElementById("nice");
-    nice.textContent = (text.textContent === "Back") ? "Nice" : "Back";
+    nice.textContent = (nice.textContent === "Back") ? "Nice" : "Back";
     document.getElementById("notTextOnly").classList.toggle('nd');
 }
+
+var ddcontent = document.getElementById("st-nm");
+statename.forEach(function(state) {
+    var option = document.createElement("option");
+    option.value = state;
+    option.textContent = state;
+    ddcontent.appendChild(option);
+})

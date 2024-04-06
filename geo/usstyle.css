@@ -110,16 +110,11 @@ p {
 .ddcontainer {
     position: relative;
     margin: auto;
+    width: 100%;
+    color: white;
+    border-width: 0px;
+    border-radius: 13px;
 }
-.ddcontent {
-    max-height: 300px;
-    overflow-y: scroll;
-    background-color: #28507b;
-    border-bottom-left-radius: 15px;
-    border-bottom-right-radius: 15px;
-    font-size: 1rem;
-}
-.ddcontainer, .ddcontent {box-sizing: border-box;}
 .stul {
     padding-inline-start: 15px;
     margin: 10px;
