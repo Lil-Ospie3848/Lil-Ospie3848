@@ -13,12 +13,11 @@ h1 {
 }
 .grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    row-gap: 10px;
+    grid-template-columns: 1fr;
     background-color: transparent;
-    padding: 5px;
+    column-gap: 5px;
     margin: auto;
-    width: 40%;
+    width: 55%;
 }
 .grid > button {
     background-color: darkslategray;
@@ -26,10 +25,10 @@ h1 {
     font-size: calc(var(--scale, 1) * 1rem);
     font-family: monospace;
     cursor: pointer;
-    aspect-ratio: 1/1;
+    aspect-ratio: 4/1;
     scale: 80%;
     color: white;
-    border-radius: 15%;
+    border-radius: 35px;
     border-color: transparent;
     float: left;
 }
