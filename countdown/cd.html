@@ -10,6 +10,7 @@
     <div id="div1" class="center" onclick="location.href='../index.html'"><h1>Countdowns:</h1></div>
     <div id="div2" class="center">
         <p id="today" style="text-decoration: underline;"></p><br><br>
+        <p id="so"></p><br><!--SCHOOL'S OUT-->
         <p id="id"></p><br><!--4th of July-->
         <p id="hw"></p><br><!--Halloween-->
         <p id="cm"></p><br><!--Christmas-->
@@ -57,6 +58,11 @@
         var dIDcm = cm.getTime() - now.getTime();
         var dITcm = dIDcm / (1000 * 3600 * 24);
         document.getElementById("cm").innerHTML = "Days until Christmas: " + Math.round(dITcm);
+
+        var so = new Date("5/23/2024");
+        var dIDso = so.getTime() - now.getTime();
+        var dITso = dIDso / (1000 * 3600 * 24);
+        document.getElementById("so").innerHTML = "Days until school is out: " + Math.round(dITso);
     </script>
 </body>
 </html>
