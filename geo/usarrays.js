@@ -31,11 +31,11 @@ const mott = ["motto",
 
 /*city*/
 const dem = ["demonym",
-    "Alabamian<br>Alabaman", "Alaskan", "Arizonan<br>Arizonian", "Arkanan<br>Arkie", "Californian", "Coloradan", "Connecticuter<br>Connecticotian", "Delawarean", "Floridan", "Georgian", 
-    "Hawaii Resident Islander", "Idahoan", "Illinoisan<br>Illinoisian", "Hoosier", "Iowan", "Kansan", "Kentuckian<br>Kentuckyan", "Louisianian Louisianan", "Mainer", "Marylander", 
-    "Massachusettsan", "Michiganian<br>Michigander", "Minnesotan", "Mississippian", "Missourian<br>Missouran", "Montanan", "Nebraskan", "Nevadan", "New Hampshirite<br>New Hampshire(wo)man", "New Jerseyan<br>New Jerseyite", 
+    "Alabamian, Alabaman", "Alaskan", "Arizonan, Arizonian", "Arkanan, Arkie", "Californian", "Coloradan", "Connecticuter, Connecticotian", "Delawarean", "Floridan", "Georgian", 
+    "Hawaii Resident Islander", "Idahoan", "Illinoisan, Illinoisian", "Hoosier", "Iowan", "Kansan", "Kentuckian, Kentuckyan", "Louisianian Louisianan", "Mainer", "Marylander", 
+    "Massachusettsan", "Michiganian, Michigander", "Minnesotan", "Mississippian", "Missourian, Missouran", "Montanan", "Nebraskan", "Nevadan", "New Hampshirite, New Hampshire(wo)man", "New Jerseyan, New Jerseyite", 
     "New Mexican", "New Yorker", "North Carolinian", "North Dakotan", "Ohioan", "Oklahoman", "Oregonian", "Pennsylvanian", "Rhode Islander", "South Carolinian",
-    "South Dakotan", "Tennessean", "Texan", "Utahn<br>Utahian", "Vermonter", "Virginian", "Washingtonian", "West Virginian", "Wisconsinite<br>Wisconsonian", "Wyomingite<br>Wyomingan", 
+    "South Dakotan", "Tennessean", "Texan", "Utahn, Utahian", "Vermonter", "Virginian", "Washingtonian", "West Virginian", "Wisconsinite, Wisconsonian", "Wyomingite, Wyomingan", 
 ]
 const captiAl = ["",
     "Montgomery", "Juneau", "Phoenix", "Little Rock", "Sacramento", "Denver", "Hartford", "Dover", "Tallahassee", "Atlanta", 

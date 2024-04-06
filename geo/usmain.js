@@ -51,37 +51,31 @@ function update() {
     }
     listOptions(selectedState);
 }
-/*
 function nextState() {
-    if (current < statename.length - 1) {
-        current++;
-        update();
+    const ddcontent = document.getElementById("st-nm");
+    const selectedIndex = ddcontent.selectedIndex;
+    if (selectedIndex < ddcontent.options.length - 1) {
+        ddcontent.selectedIndex = selectedIndex + 1;
     } else {
-        current = 1;
-        update();
+        ddcontent.selectedIndex = 1;
     }
+    update();
 }
+
 function backAsTate() {
-    if (current > 0) {
-        current--;
-        update();
+    const ddcontent = document.getElementById("st-nm");
+    const selectedIndex = ddcontent.selectedIndex;
+    if (selectedIndex > 1) {
+        ddcontent.selectedIndex = selectedIndex - 1;
     } else {
-        current = 51;
-        update();
+        ddcontent.selectedIndex = ddcontent.options.length - 1;
     }
+    update();
 }
 
+document.getElementById("next").addEventListener("click", nextState);
+document.getElementById("back").addEventListener("click", backAsTate);
 
-document.getElementById("next").addEventListener("click", function() {
-    nextState();
-})
-document.getElementById("back").addEventListener("click",function() {
-    backAsTate();
-})
-document.addEventListener("keyup", function(event) {
-    if (event.key === 'ArrowRight') {nextState();}
-    if (event.key === 'ArrowLeft') {backAsTate();}
-})*/
 
 /*text only*/
 function textOnly() {
