@@ -4,12 +4,12 @@ h1 {text-align: center; margin-top: 25px; font-size: 3.5em; cursor: default;}
 /*g-c means grid container*/
 .g-c {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
+    grid-template-columns: 1fr;
+    column-gap: 5px;
     background-color: transparent;
-    padding: 5px;
     margin: auto;
-    width: 60%;
+    width: 55%;
+    min-width: 864px;
 }
 .g-c > button {
     background-color: darkslategray;
@@ -17,10 +17,10 @@ h1 {text-align: center; margin-top: 25px; font-size: 3.5em; cursor: default;}
     font-size: 200%;
     font-family: monospace;
     cursor: pointer;
-    aspect-ratio: 1/1;
+    aspect-ratio: 4/1;
     scale: 80%;
     color: white;
-    border-radius: 15%;
+    border-radius: 35px;
     border-color: transparent;
     float: left;
 }
