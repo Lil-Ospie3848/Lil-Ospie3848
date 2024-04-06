@@ -32,18 +32,26 @@ function updatePC(elementId, value) {
     console.log("updated");
 }
 
-
 function update() {
+    const ddcontent = document.getElementById("st-nm");
+    const selectedState = ddcontent.value;
+    const selectedIndex = ddcontent.selectedIndex;
     bits.forEach((element, index) => {
-        element.innerHTML = arrays[index][current];
+        const content = arrays[index][selectedIndex];
+        if (element) {
+            element.textContent = content;
+        }
     });
-    if (estab.length > 0) {
-        const [month, day, year] = estab[current].split(/[\s,]+/);
+    const estabDate = estab[selectedIndex];
+    if (estabDate) {
+        const [month, day, year] = estabDate.split(/[\s,]+/);
         updatePC("mth", month);
         updatePC("day", day);
         updatePC("yrs", year);
     }
+    listOptions(selectedState);
 }
+/*
 function nextState() {
     if (current < statename.length - 1) {
         current++;
@@ -63,7 +71,6 @@ function backAsTate() {
     }
 }
 
-nextState();
 
 document.getElementById("next").addEventListener("click", function() {
     nextState();
@@ -74,7 +81,7 @@ document.getElementById("back").addEventListener("click",function() {
 document.addEventListener("keyup", function(event) {
     if (event.key === 'ArrowRight') {nextState();}
     if (event.key === 'ArrowLeft') {backAsTate();}
-})
+})*/
 
 /*text only*/
 function textOnly() {
@@ -91,10 +98,36 @@ function nice() {
     document.getElementById("notTextOnly").classList.toggle('nd');
 }
 
-var ddcontent = document.getElementById("st-nm");
-statename.forEach(function(state) {
-    var option = document.createElement("option");
-    option.value = state;
-    option.textContent = state;
-    ddcontent.appendChild(option);
-})
+function listOptions(selectedState) {
+    var ddcontent = document.getElementById("st-nm");
+    ddcontent.innerHTML = '';
+    statename.forEach(function(state) {
+        var option = document.createElement("option");
+        option.value = state;
+        option.textContent = state;
+        ddcontent.appendChild(option);
+    });
+    if (selectedState) {
+        ddcontent.value = selectedState;
+    }
+    if (selectedState !== "- Select") {
+        var selectOption = ddcontent.querySelector('option[value="- Select"]');
+        if (selectOption) {
+            selectOption.disabled = true;
+        }
+    };
+}
+function initializePage() {
+    bits.forEach((element, index) => {
+        const content = arrays[index][0];
+        if (element) {
+            element.textContent = content;
+        }
+    });
+    listOptions(statename[0]);
+}
+
+window.onload = initializePage;
+/*UPDATE LOG: JUST NEED TO GET BUTTONS < AND > TO
+BE WORKING WITH CHANGING THE NAME OF THE SELECTED
+ELEMENT AND THAT SHOULD BE BIG PROGRESS.*/

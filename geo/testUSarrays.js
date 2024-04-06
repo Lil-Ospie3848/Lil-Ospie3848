@@ -13,7 +13,7 @@ const stateData = {
         "Land of Enchantment", "Empire State", "Tar Heel State", "Peace Garden State", "Buckeye State", "Sooner State", "Beaver State", "Keystone State", "Ocean State", "Palmetto State", 
         "The Mount Rushmore State", "Volunteer State", "Lone Star State", "Beehive State", "Green Mountain State", "The Old Dominion", "Evergreen State", "Mountain State", "Badger State", "Equality State"
     ],
-    estab: ["date",
+    estab: ["",
         "Dec 14, 1819", "Jan 3, 1959", "Feb 14, 1912", "June 15, 1836", "Sept 9, 1850", "Aug 1, 1876", "Jan 9, 1788", "Dec 7, 1787", "Mar 3, 1845", "Jan 2, 1788", 
         "Aug 21, 1959", "July 3, 1890", "Dec 3, 1818", "Dec 11, 1816", "Dec 28, 1846", "Jan 29, 1861", "June 1, 1792", "Apr 30, 1812", "Mar 15, 1820", "Apr 28, 1788", 
         "Feb 6, 1788", "Jan 26, 1837", "May 11, 1858", "Dec 10, 1817", "Aug 10, 1821", "Nov 8, 1889", "Mar 1, 1867", "Oct 31, 1864", "June 21, 1788", "Dec 18, 1787", 
