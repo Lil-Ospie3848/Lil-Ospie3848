@@ -75,6 +75,10 @@ function backAsTate() {
 
 document.getElementById("next").addEventListener("click", nextState);
 document.getElementById("back").addEventListener("click", backAsTate);
+document.addEventListener("keyup", function (event) {
+    if (event.key === "ArrowRight"){nextState()}
+    if (event.key === "ArrowLeft"){backAsTate()}
+})
 
 
 /*text only*/

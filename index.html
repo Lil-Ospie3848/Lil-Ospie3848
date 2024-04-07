@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width">
     <title>Incompletes</title>
     <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="icon" type="image/png" href="mof2.png">
 </head>
 <body>
     <div><h1>Incompletes</h1></div>
@@ -12,7 +13,13 @@
         <button class="btn-hmpg b1" onclick="location.href='geo/usstates.html'">United States</button>
         <button class="btn-hmpg b2" onclick="location.href='matteroffactyl/v2index.html'">Matter of Factyl</button>
         <button class="btn-hmpg b3" onclick="location.href='countdown/cd.html'">Countdowns</button>
-        <button class="btn-hmpg b4" onclick="location.href='sports/sports.html'">Sports</button>
+        <button class="btn-hmpg b4" id="sports">Sports</button>
     </div>
+    <script>
+        var s = document.getElementById("sports");
+        s.addEventListener("click", function() {
+            s.textContent = (s.textContent === "Maybe next time") ? "Sports" : "Maybe next time";
+        })
+    </script>
 </body>
 </html>
