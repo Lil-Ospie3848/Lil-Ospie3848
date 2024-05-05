@@ -81,7 +81,7 @@ const MLBteamsData = {
     "AL": [
         ["Chicago White Sox", "Clevland Guardians", "Detroit Tigers", "Kansas City Royals", "Minnesota Twins"],
         ["Baltimore Orioles", "Boston Red Sox", "New York Yankees", "Tampa Bay Rays", "Toronto Blue Jays"],
-        ["Houston Astros", "Los Angeles Angels", "Oakland Athletics", "Seattle mariners", "Texas Rangers"]
+        ["Houston Astros", "Los Angeles Angels", "Oakland Athletics", "Seattle Mariners", "Texas Rangers"]
     ],
     "NL": [
         ["Chicago Cubs", "Cincinnati Reds", "Milwaukee Brewers", "Pittsburgh Pirates", "St. Louis Cardinals"],

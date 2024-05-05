@@ -1,5 +1,5 @@
 body {
-    background-color: black;
+    background-color: #0F3C43;
     font-family: monospace;
     text-align: center;
     color: white;
@@ -10,9 +10,47 @@ h1 {
     font-size: 3rem;
     cursor: pointer
 }
+h2 {
+    margin-top: 25px;
+    font-size: 2.25rem;
+    padding: 5px;
+}
 .center {margin: auto}
 p {
-    font-size: 1.5 em;
+    font-size: 1.5rem;
     font-family: monospace;
     margin: auto;
+    padding: 5px;
 }
+.ff {width: 45%;}
+.sect {
+    background-color: #13505b;
+    color: white;
+    margin: auto;
+    margin-top: 25px;
+    font-family: monospace;
+    border-radius: 10px;
+}
+.buff {padding: 10px 30px;}
+.nd {display: none;}
+.sixty {width: 60%;}
+.blobcontainer {position: relative; margin: auto; border-radius: 10px;}
+
+.c1 {background-color: #119da4;}
+.c2 {background-color: #0c7489;}
+.c3 {background-color: #13505b;}
+.c4 {background-color: #d7d9ce;}
+
+.row {display: flex; direction: row; padding: 5px;}
+.col {display: flex; direction: column; padding: 5px;}
+.f1 {flex: 1;}
+.f5 {flex: 5;}
+
+.pointer {cursor: pointer;}
+.a {
+    border-radius: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+.pad5 {padding: 5px; border-radius: 15px;}
