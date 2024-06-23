@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width">
+    <title>Escape room</title>
+    <style>
+        body {
+            font-family: monospace;
+            user-select: none;
+        } 
+        .nd {display: none};
+    </style>
+</head>
+<body>
+    <div id="intro">
+        <p>You got lost, but found a shack with a guy who says he knows the directions on how to get back. You better hope this guy is trustworthy or else you just wasted your time and may be eternally lost.<br>He says, "You must find your way through these puzzles/rooms or cannot tell you the way back." The guy gives you a keey and disappears. In front of you, where he was, 4 boxes and a door leading to another room appear.</p>
+        <button onclick="key()">Next</button>
+    </div>
+
+    <br><br>
+    <div class="nd" id="firstPuzzles">
+        <p id="key">key</p>
+        <button onclick="puzzle1()">Puzzle #1</button>
+        <button onclick="puzzle2()">Puzzle #2</button>
+        <button onclick="puzzle3()">Puzzle #3</button>
+        <button onclick="puzzle4()">Puzzle #4</button>
+        <button id="r1">Room #1</button>
+
+        <div class="nd" id="puzzle1">
+            <div id="p1idk">
+                <p>Insert key</p>
+                <button onclick="p1yes()">Insert</button><br><br>
+            </div>
+            <div class="nd" id="p1yes">
+                <p id="abcde">Find the square root of b + the square root of (c-e) + a</p>
+                <p id="a">a. What date was I born on? mm/<u>dd</u>/yyyy
+                <p id="b">b. How many days are in a year? 
+                <p id="c">c. How many problems does Jay-Z have?
+                <p id="d">d. +356 is the international dialing code for where?
+                <p id="e">e. What year did [answer d] become a republic? '_ _ <br><br>
+                <input id="p1Ans">
+                <button id="p1Sub">Submit</button>
+                <p id="twenty" class="nd">20</p>
+            </div>
+        </div>
+
+        <div class="nd" id="puzzle2">
+            <div id="p2idk">
+                <p>Insert phrase</p>
+                <input id="p2input">
+                <button onclick="p2yes()">Submit</button><br><br>
+            </div>
+            <div class="nd" id="p2yes">
+                <p id="lad">Help my lines and dots find their way into letters<br>
+                    .--- ..-. --- ...- -... -.- ..-. .. -.. --- -. - .-.. .. -.- . - .... .. ... --. .- -- . --- -. -.- ... --- . .-.. -..
+                </p>
+                <input id="p2Ans">
+                <button id="p2Sub">Submit</button>
+                <p class="nd" id="idltg">jfobkf-idontlikethisgame-onksoeld</p>
+            </div>
+        </div>
+
+        <div class="nd" id="puzzle3">
+            <div id="p3idk">
+                <p>Insert 2 digits</p>
+                <input id="p3input">
+                <button onclick="p3yes()">Submit</button><br><br>
+            </div>
+            <div class="nd" id="p3yes">
+                <p id="jsutwatygalts">Just summon up this word and then you've got a lot to say<br>
+                Unscramble:<br>
+                SPERU - especially; very<br>
+                CILA - 40% of California<br>
+                RIFAGL - easily broken or damged without e<br>
+                SICIT - minimalistic is <b>not</b> a <b>minimal</b> word</p>
+                <input id="p3Ans">
+                <button id="p3Sub">Submit</button>
+                <p class="nd" id="scfl">supercalifragilistic</p>
+            </div>
+        </div>
+
+        <div class="nd" id="puzzle4">
+            <div id="p4idk">
+                <p>Insert a word</p>
+                <input id="p4input">
+                <button onclick="p4yes()">Submit</button><br><br>
+            </div>
+            <div class="nd" id="p4yes">
+                <p id="fp">Food preferences<br>
+                Please use the paper enigma. WSWNBJZBBLBUKOKDDSBL<br>
+                No enigma? Please use atbash instead. RORPVXSVVHVZMWMLLWOVH</p>
+                <input id="p4Ans">
+                <button id="p4Sub">Submit</button>
+                <p class="nd" id="ilcan">ilikecheeseandnoodles</p>
+            </div>
+        </div>
+
+        <div class="nd" id="room1">
+            <div id="r1idk">
+                <p>In what order were the puzzles solved?</p>
+                <input id="r1Ans">
+                <button id="r1Sub">Submit</button>
+            </div>
+        </div>
+    </div>
+
+    <br><br>
+    <div class="nd" id="rooms">
+        <p>You're made it into Room #1</p>
+        <button onclick="r1p1()">Puzzle #1</button>
+        <button onclick="r1p2()">Puzzle #2</button>
+        <button onclick="r1p3()">Puzzle #3</button>
+
+        <div class="nd" id="r1p1">
+            <div id="r1p1q">
+                <p id="auttots">Add up the times of these songs:<br><br>
+                    Close Your Eyes by Tech N9ne<br>
+                    Drug Ballad by Eminem<br>
+                    Sometimes People Suck by Sam Tinnesz<br>
+                    Easy On Me by Adele<br>
+                    Easy For You to Say by 5 Seconds of Summer<br>
+                    Face to Face by Daft Punk<br>
+                    Fried (She a Vibe) by Future<br>
+                    Icarus by Bastille<br>
+                    One More Hallelujah by Welshly Arms<br>
+                    Three-Thirty by AJR<br>
+                    Dark Places by Beck<br>
+                    Let The Road by Rixton<br>
+                    I&#8217;m Only Sleeping by The Beatles<br>
+                    Animal by Missio<br>
+                    Sorry by SAINT PHNX
+                </p>
+                <input id="r1p1Ans">
+                <button id="r1p1Sub">Submit</button>
+            </div>
+            <p id="time" class="nd">49:30</p>
+            <p id="r3Key" class="nd">Here's a key to room 3</p>
+        </div>
+
+        <div class="nd" id="r1p2">
+            <div id="r1p2q">
+                <p id="auttots">Find the phrase:<br><br>
+                    insert braille images later
+                </p>
+                <input id="r1p2Ans">
+                <button id="r1p2Sub">Submit</button>
+            </div>
+            <p id="thoopid" class="nd">AI is stupid</p>
+            <p id="r2Key" class="nd">Here's a key to room 2</p>
+        </div>
+
+        <div class="nd" id="r1p3">
+            <div id="r1p3q">
+                <p id="fitb">Fill in the blanks: <a href="https://matteroffactyl.netlify.app/" target="_blank" rel="noopener noreferrer">matteroffactyl</a><br><br>
+                    Nebraska&#8217;s Motto: <input id="fitb1"><br><br>
+                    Nebraska&#8217;s Estab: <input id="fitb2"><br><br>
+                    Northern cardinal, Northern mockingbird, Western meadowlark make up what percent of states? <input id="fitb3"><br><br>
+                    <br>
+                    What division?<br><br>
+                    Rangers: <input id="fitb4"><br><br>
+                    LA Galaxy: <input id="fitb5"><br><br>
+                    Pacers: <input id="fitb6"><br><br>
+                    Saints: <input id="fitb7"><br><br>
+                    Canucks: <input id="fitb8"><br><br>
+                </p>
+                <button id="r1p3Sub">Submit</button>
+                <p id="web" class="nd">If you used the link, did you like the webiste?</p>
+                <p id="r4Key" class="nd">Here's a key to room 4</p>
+            </div>
+        </div>
+    </div>
+
+    <br><br>
+    <input type="button" id="toMoreRooms" class="nd" value="To more rooms"><br><br>
+    <div class="nd" id="rooms234">
+        <button id="r2button" class="nd" onclick="r2()">Room #2</button>
+        <button id="r3button" class="nd" onclick="r3()">Room #3</button>
+        <button id="r4button" class="nd" onclick="r4()">Room #4</button>
+        <button id="r5button" class="" onclick="r5()">Room #5</button>
+
+        <div class="nd" id="r2">
+            <p>
+                Logic Puzzle: <a href="https://docs.google.com/spreadsheets/d/1HBHzKnxgxfj98dYPCPBkCYSISOR0NpXYyJbsNThLe-w/edit?usp=sharing" target="_blank" rel="noopener noreferrer">here</a><br>
+                Print or make a copy
+            </p>
+            <br><br>
+            <p>Person, Date, Location, Job<br>
+                Syntax: Z - February 30 - Lincoln - Teacher<br><br>
+                <input id="pp"> <input id="dt"> <input id="ll"> <input id="jj"><br><br>
+                <input id="pa"> <input id="da"> <input id="la"> <input id="ja"><br><br>
+                <input id="pb"> <input id="db"> <input id="lb"> <input id="jb"><br><br>
+                <input id="pc"> <input id="dc"> <input id="lc"> <input id="jc"><br><br>
+                <input id="pd"> <input id="dd"> <input id="ld"> <input id="jd"><br><br>
+            </p>
+            <button id="pdlj">Submit</button>
+            <p class="nd" id="r2key4r5">Here's a key for room 5</p>
+        </div>
+        <div class="nd" id="r3"><p>room 3 place holder</p></div>
+        <div class="nd" id="r4"><p>room 4 place holder</p></div>
+
+        <div class="nd" id="room5">
+            <p id="room2key">Room 2 key? <input id="r2k" type="checkbox" disabled="true"></p>
+            <p id="room3key">Room 3 key? <input id="r3k" type="checkbox" disabled="true"></p>
+            <p id="room4key">Room 4 key? <input id="r4k" type="checkbox" disabled="true"></p>
+        </div><!--FINISH ROOMS 3,4, KEYS FOR ROOM 5, CSS, IMAGES-->
+    </div>
+
+<script>/*first puzzles*/
+    function toggleClass(elementId, action) {
+    document.getElementById(elementId).classList[action]('nd');}
+
+    function take(elementId) {toggleClass(elementId, 'remove');}
+    function add(elementId) {toggleClass(elementId, 'add');}
+
+    function key() {take('firstPuzzles');}
+
+    function puzzle1() {take('puzzle1');addMultiple(['puzzle2', 'puzzle3', 'puzzle4', 'room1']);}
+    function p1yes() {take('p1yes');add('p1idk');add('key');add('intro');}
+
+    function handlePuzzle(puzzleId) {
+        addMultiple(['puzzle1', 'puzzle2', 'puzzle3', 'puzzle4', 'room1']);
+        take(puzzleId);
+    }
+
+    function checkAnswer(puzzleId, inputId, correctAnswer) {
+        const input = document.getElementById(inputId);
+        if (input.value === correctAnswer) {
+            take(puzzleId + 'yes');
+            add(puzzleId + 'idk');
+        } else {
+            input.value = '';
+        }
+    }
+    function puzzle2() { handlePuzzle('puzzle2'); }
+    function p2yes()   { checkAnswer('p2', 'p2input', 'ilikecheeseandnoodles'); }
+    function puzzle3() { handlePuzzle('puzzle3'); }
+    function p3yes()   { checkAnswer('p3', 'p3input', '20'); }
+    function puzzle4() { handlePuzzle('puzzle4'); }
+    function p4yes()   { checkAnswer('p4', 'p4input', 'supercalifragilistic'); }
+
+    function room1() {take('room1'); addMultiple(['puzzle1','puzzle2','puzzle3','puzzle4']);}
+
+    function addMultiple(elementIds) {elementIds.forEach(add);}
+</script>
+<script>/*first puzzle inputs*/
+    let greenNum = 0;
+    /*Puzzle #1*/
+    var sub1 = document.getElementById('p1Sub');
+    const p1yess = document.getElementById('p1yes');
+    const p1Ans = document.getElementById('p1Ans');
+    p1Ans.value = '';
+    sub1.addEventListener('click', () => {
+        if (p1Ans.value === '20') {
+            document.getElementById('twenty').style.color = "green";
+            ['twenty','a','b','c','d','e','abcde'].forEach(id => {document.getElementById(id).classList.toggle('nd');})
+            greenNum++;
+            console.log(greenNum);
+        } else {p1Ans.value = '';}
+    });
+
+    /*Puzzle #2*/
+    var sub2 = document.getElementById('p2Sub');
+    const p2yess = document.getElementById('p2Yes');
+    const p2Ans = document.getElementById('p2Ans');
+    p2Ans.value = '';
+    sub2.addEventListener('click', () => {
+        if (p2Ans.value === 'jfobkfidontlikethisgameonksoeld') {
+            document.getElementById('idltg').style.color = "green";
+            ['idltg', 'lad','p2Ans','p2Sub'].forEach(id => {document.getElementById(id).classList.toggle('nd');})
+            greenNum++
+            console.log(greenNum);
+        } else {p2Ans.value = '';}
+    });
+
+    /*Puzzle #3*/
+    var sub3 = document.getElementById('p3Sub');
+    const p3yess = document.getElementById('p3yess');
+    const p3Ans = document.getElementById('p3Ans');
+    p3Ans.value = '';
+    sub3.addEventListener('click', () => {
+        if (p3Ans.value === 'supercalifragilistic') {
+            document.getElementById('scfl').style.color = "green";
+            ['scfl','jsutwatygalts','p3Ans','p3Sub'].forEach(id => {document.getElementById(id).classList.toggle('nd');})
+            greenNum++;
+            console.log(greenNum);
+        } else {p3Ans.value = '';}
+    });
+
+    /*Puzzle #4*/
+    var sub4 = document.getElementById('p4Sub');
+    const p4yess = document.getElementById('p4yes');
+    const p4Ans = document.getElementById('p4Ans');
+    p4Ans.value = '';
+    sub4.addEventListener('click', () => {
+        if (p4Ans.value === 'ilikecheeseandnoodles') {
+            document.getElementById('ilcan').style.color = "green";
+            ['ilcan','fp','p4Ans','p4Sub'].forEach(id => {document.getElementById(id).classList.toggle('nd');})
+            greenNum++;
+            console.log(greenNum);
+        } else {p4Ans.value = '';}
+    });
+
+
+    /*greens*/
+    const greens = ['twenty', 'idltg', 'scfl', 'ilcan'];
+    const r1 = document.getElementById('r1');
+
+    r1.addEventListener('click', () => {
+        if (greenNum === 4) {
+            room1();
+        } else {
+            console.log(`Not all elements are green yet.`);
+        }
+    });
+
+    const rooms = document.getElementById('rooms');
+    const toRooms = document.getElementById('r1Sub');
+
+    toRooms.addEventListener('click', () => {
+        if (document.getElementById('r1Ans').value === '1342') {
+            rooms.classList.remove('nd');
+            document.getElementById('firstPuzzles').classList.add('nd');
+        } else {console.log('Not all elements are visible.'); document.getElementById('r1Ans').value = '';}
+    });
+</script>
+
+<script>/*room #1 puzzles*/
+    let r1p3total = 0;
+    function r1p1() {take('r1p1');addMultiple(['r1p2','r1p3']);}
+    function r1p2() {take('r1p2');addMultiple(['r1p1','r1p3']);}
+    function r1p3() {take('r1p3');addMultiple(['r1p1','r1p2']);}
+
+    r1p1Sub = document.getElementById('r1p1Sub');
+    r1p1Ans = document.getElementById('r1p1Ans');
+    r1p2Sub = document.getElementById('r1p2Sub');
+    r1p2Ans = document.getElementById('r1p2Ans');
+    r1p3Sub = document.getElementById('r1p3Sub');
+    let fitbElements = [];
+    for (let i = 1; i <= 8; i++) {fitbElements.push(document.getElementById(`fitb${i}`));}
+    let [fitb1, fitb2, fitb3, fitb4, fitb5, fitb6, fitb7, fitb8] = fitbElements;
+
+    r1p1Sub.addEventListener('click', () => {
+        if (r1p1Ans.value === '49:30') {
+            document.getElementById('r1p1q').classList.add('nd');
+            document.getElementById('time').classList.remove('nd');
+            document.getElementById('time').style.color = "green";
+            document.getElementById('r3Key').classList.remove('nd');
+            document.getElementById('r3button').classList.remove('nd');
+            document.getElementById('toMoreRooms').classList.remove('nd');
+        } else {r1p1Ans.value = '';}
+    });
+
+    r1p2Sub.addEventListener('click', () => {
+        if (r1p2Ans.value === 'aiisstupid') {
+            document.getElementById('r1p2q').classList.add('nd');
+            document.getElementById('thoopid').classList.remove('nd');
+            document.getElementById('thoopid').style.color = "green";
+            document.getElementById('r2Key').classList.remove('nd');
+            document.getElementById('r2button').classList.remove('nd');
+            document.getElementById('toMoreRooms').classList.remove('nd');
+        } else {r1p2Ans.value = '';}
+    });
+
+    function puzz3ans(inputId, answer) {
+        if (inputId && answer) {
+            const theInput = document.getElementById(inputId);
+            if (theInput.value === '') {
+                theInput.style.color = "black";
+            }else if(theInput.value === answer) {
+                r1p3total++;
+                //console.log(r1p3total);
+                theInput.style.color = "black";
+            } else {theInput.style.color = "red"};
+        }
+    }
+    r1p3Sub.addEventListener('click', () => {
+        r1p3total = 0;
+        puzz3ans('fitb1', 'equality before the law');
+        puzz3ans('fitb2', '03/01/1867');
+        puzz3ans('fitb3', '36%');
+        puzz3ans('fitb4', 'al east');
+        puzz3ans('fitb5', 'western');
+        puzz3ans('fitb6', 'central');
+        puzz3ans('fitb7', 'afc west');
+        puzz3ans('fitb8', 'pacific');
+
+        if (r1p3total === 8) {
+            fitbElements.forEach(item => {
+                item.style.color = "green";
+                item.disabled = true;
+            });
+            r1p3Sub.innerHTML = "Move on";
+            r1p3Sub.addEventListener('click', () => {
+                document.getElementById('r1p3Sub').classList.add('nd');
+                document.getElementById('fitb').classList.add('nd');
+                document.getElementById('web').classList.remove('nd');
+                document.getElementById('r4Key').classList.remove('nd');
+                document.getElementById('r4button').classList.remove('nd');
+                document.getElementById('toMoreRooms').classList.remove('nd');
+            });
+        }
+    });
+</script>
+<script>/*transition*/
+    function r2() {take('r2'); take('r5button'); add('r3'); add('r4'); add('room5');}
+    function r3() {take('r3'); take('r5button'); add('r2'); add('r4'); add('room5');}
+    function r4() {take('r4'); take('r5button'); add('r2'); add('r3'); add('room5');}
+    function r5() {take('room5'); add('r2'); add('r3'); add('r4');}
+    document.getElementById('toMoreRooms').addEventListener('click', () => {
+        document.getElementById('rooms234').classList.toggle('nd');
+        document.getElementById('rooms').classList.toggle('nd');
+        document.getElementById('toMoreRooms').value = document.getElementById('toMoreRooms').value === 'To more rooms' ? 'Back' : 'To more rooms';
+        checkAndHideButton();
+    });
+    function checkAndHideButton() {
+        const r2button = document.getElementById('r2button');
+        const r3button = document.getElementById('r3button');
+        const r4button = document.getElementById('r4button');
+        const toMoreRoomsButton = document.getElementById('toMoreRooms');
+
+        function hasClass(element, className) {return element.classList.contains(className);}
+
+        if ((!r2button || !hasClass(r2button, 'nd')) &&
+            (!r3button || !hasClass(r3button, 'nd')) &&
+            (!r4button || !hasClass(r4button, 'nd'))) {
+            if (toMoreRoomsButton) {
+                toMoreRoomsButton.style.display = 'none';
+            }
+        }
+    }
+</script>
+<script>/*rooms 2,3,4*/
+    const ids = ["pp", "dt", "ll", "jj", "pa", "da", "la", "ja", "pb", "db", "lb", "jb", "pc", "dc", "lc", "jc", "pd", "dd", "ld", "jd"];
+    const inputs = {};
+    ids.forEach(id => {inputs[id] = document.getElementById(id);});
+    const disabledInputs = [inputs.pp, inputs.dt, inputs.ll, inputs,jj, inputs.pa, inputs.pb, inputs.pc, inputs.pd];
+    disabledInputs.forEach(element => {element.disabled = true;});
+
+    inputs.pp.value = "Person";
+    inputs.pa.value = "A";
+    inputs.pb.value = "B";
+    inputs.pc.value = "C";
+    inputs.pd.value = "D";
+    inputs.dt.value = "Date";
+    inputs.ll.value = "Location";
+    inputs.jj.value = "Job";
+
+    let lpcount = 0;
+    function logicPuzzle(lpInput, lpAnswer) {
+        if (lpInput && lpAnswer) {
+            const LPInput = document.getElementById(lpInput);
+            if (LPInput.value === '') {
+                LPInput.style.color = "black";
+            } else if(LPInput.value === lpAnswer) {
+                lpcount++;
+                LPInput.style.color = "black"
+            } else {LPInput.style.color = "red"}
+        }
+    }
+    document.getElementById('pdlj').addEventListener('click', () => {
+        lpcount = 0;
+        logicPuzzle('da', 'August 30');
+        logicPuzzle('db', 'July 30');
+        logicPuzzle('dc', 'June 30');
+        logicPuzzle('dd', 'September 30');
+        logicPuzzle('la', 'Houston');
+        logicPuzzle('lb', 'Boston');
+        logicPuzzle('lc', 'Boulder');
+        logicPuzzle('ld', 'San Francisco');
+        logicPuzzle('ja', 'Game Developer');
+        logicPuzzle('jb', 'Pilot');
+        logicPuzzle('jc', 'Astronaut');
+        logicPuzzle('jd', 'Mechanical Engineer');
+
+        if (lpcount === 12) {
+            ids.forEach(item => {
+                document.getElementById(item).style.color = "green";
+                document.getElementById(item).disabled = true;
+                document.getElementById('r2key4r5').classList.toggle('nd');
+                document.getElementById('r2k').checked = true;
+                console.log('checked');
+            });
+        }
+    });
+</script>
+
+<script>/*loading function*/
+    function onLoadFunctions() {
+        ['p2input','p3input','p4input','p1Ans','p2Ans','p3Ans','p4Ans','r1p1Ans','r1p2Ans', 'r1Ans',
+            'fitb1','fitb2','fitb3','fitb4','fitb5','fitb6','fitb7','fitb8',
+            'da','db','dc','dd','la','lb','lc','ld','ja','jb','jc','jd'
+        ].forEach(id => {document.getElementById(id).value = '';});
+        document.getElementById('r2k').checked = false;
+        document.getElementById('r3k').checked = false;
+        document.getElementById('r4k').checked = false;
+    }
+    window.onload = onLoadFunctions();
+</script>
+</body>
+</html>
