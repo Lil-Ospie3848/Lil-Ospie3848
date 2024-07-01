@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width">
+    <title>Gradients</title>
+</head>
+<body>
+    <br><br>
+    <div style="margin: auto" onclick="location.href='../index.html'"><h1>Gradients</h1></div><br>
+    <div id="gradientContainer"></div>
+</body>
+<style>
+    body {
+        background-color: black;
+        font-family: monospace;
+        text-align: center;
+        color: white;
+        user-select: none;
+    }
+    h1 {
+        margin-top: 25px;
+        font-size: 3rem;
+        cursor: pointer;
+        min-width: 70%;
+        margin-bottom: 10px;
+    }
+    .gradient {
+        height: 50px;
+        margin: 25px auto;
+        width: 80%;
+        cursor: pointer;
+    }
+</style>
+<script>
+    function createGradientElement(containerId, direction, colors) {
+        const container = document.getElementById(containerId);
+        const gradientDiv = document.createElement('div');
+        gradientDiv.className = 'gradient';
+        let currentDirection = 'to right';
+        const gradientColors = colors.join(',');
+        gradientDiv.style.backgroundImage = `linear-gradient(${currentDirection}, ${gradientColors})`;
+
+        gradientDiv.addEventListener('click', () => {
+            currentDirection = currentDirection === 'to right' ? 'to left' : 'to right';
+            gradientDiv.style.backgroundImage = `linear-gradient(${currentDirection}, ${gradientColors})`;
+        });
+
+        container.appendChild(gradientDiv);
+    }
+
+    const gradients = [
+        {colors: ['#F72585','#B5179E','#7209B7','#560BAD','#480CA8','#3A0CA3','#3F37C9','#4361EE','#4895EF','#4CC9F0']},
+        {colors: ['#03071E','#370617','#6A040F','#9D0208','#D00000','#DC2F02','#E05D04','#F48C06','#FAA307','#FFBA08']},
+        //{colors: ['#20558A','#162E51','#2196F3','#0071BC','#1B1B1B','#495057','#6C757D','#FFFFFF','#00A91C','#B50909']},
+        {colors: ['#0466C8','#0353A4','#023E7D','#002855','#001845','#001233','#33415C','#5C677D','#7D8597','#979DAC']},
+        {colors: ['#007F5F','#2B9348','#55A630','#80B918','#AACC00','#BFD200','#D4D700','#DDDF00','#EEEF20','#FFFF3F']},
+        {colors: ['#7400B8','#6930C3','#5E60CE','#5390D9','#4EA8DE','#48BFE3','#56CFE1','#64DFDF','#72EFDD','#80FFDB']},
+        {colors: ['#641220','#6E1423','#85182A','#A11D33','#A71E34','#B21E35','#BD1F36','#C71F37','#DA1E37','#E01E37']},
+        {colors: ['#E3F2FD','#BBDEFB','#90CAF9','#64B5F6','#42A5F5','#2196F3','#1E88E5','#1976D2','#1565C0','#0D47A1']},
+        {colors: ['#FF4800','#FF5400','#FF6000','#FF6D00','#FF7900','#FF8500','#FF9100','#FF9E00','#FFAA00','#FFB600']},
+        {colors: ['#99E2B4','#88D4AB','#78C6A3','#67B99A','#56AB91','#469D89','#358F80','#248277','#14746F','#036666']},
+        {colors: ['#0466C8','#0353A4','#023E7D','#002855','#001845','#001233','#33415C','#5C677D','#7D8597','#979DAC']},
+        {colors: ['#053C5E','#1D3958','#353652','#4C334D','#643047','#7C2E41','#942B3B','#AB2836','#C32530','#DB222A']},
+        //{colors: ['#669900','#99CC33','#CCEE66','#006699','#3399CC','#990066','#CC3399','#FF6600','#FF9900','#FFCC00']},
+        {colors: ['#39D05C','#35E95F','#35D475','#35AC7A','#347F83','#2E518A','#40288F','#5702A1','#6500A3','#8127B9']},
+        {colors: ['#FF0072','#FF177F','#FF2E8C','#FF4598','#FF5CA5','#FF74B2','#FF8BBF','#FFA2CB','#FFB9D8','#FFD0E5']},
+        {colors: ['#000E14','#00111A','#00141F','#001824','#001B29','#002233','#00293D','#003047','#003652','#003D5C']},
+        //https://coolors.co/palette/000e14-00111a-00141f-001824-001b29-002233-00293d-003047-003652-003d5c
+        //https://coolors.co/palette/11151c-151b25-19212e-212d40-273246-2c374b-313c51-343f54-364156-485265
+        //https://coolors.co/palette/f8f9fa-e9ecef-dee2e6-ced4da-adb5bd-6c757d-495057-343a40-212529
+
+        //{colors: ['#9F2226','#ECA71E','#FED300','#000000','#274384','#AA5F1B','#026F36','#8E8E8E']},
+        //{colors: ['#9B5DE5','#F15BB5','#FEE440','#00BBF9','#00F5D4']},
+    ]
+    //{colors: ['#','#','#','#','#','#','#','#','#','#']},
+    //{colors: ['#','#','#','#','#']},
+    gradients.forEach(gradient => {
+        createGradientElement('gradientContainer', gradient.direction, gradient.colors);
+    });
+</script>
+</html>

@@ -86,7 +86,7 @@ const treEs = ["tree",
 const burd = ["bird",
     "Yellowhammer", "Willow ptarmigan", "Cactus wren", "Northern mockingbird", "California quail", "Lark bunting", "American robin", "Delaware blue hen", "Northern mockingbird", "Brown thrasher", 
     "Hawaiian goose", "Mountain bluebird", "Northern cardinal", "Northern cardinal", "Eastern goldfinch", "Western meadowlark", "Northern cardinal", "Brown pelican", "Chickadee", "Baltimore oriole", 
-    "Black capped chickadee", "Americna robin", "Common loon", "Northern mockingbird", "Eastern bluebird", "Western meadowlark", "Western meadowlark", "Mountain bluebird", "Purple finch", "Eastern goldfinch", 
+    "Black capped chickadee", "American robin", "Common loon", "Northern mockingbird", "Eastern bluebird", "Western meadowlark", "Western meadowlark", "Mountain bluebird", "Purple finch", "Eastern goldfinch", 
     "Greater roadrunner", "Eastern bluebird", "Northern cardinal", "Western meadowlark", "Northern cardinal", "Scissor-tailed flycatcher", "Western meadowlark", "Ruffed grouse", "Rhode Island red", "Carolina wren", 
     "Ring-necked pheasant", "Northern mockingbird", "Northern mockingbird", "California gull", "Hermit thrush", "Northern cardinal", "Willow goldfinch", "Northern cardinal", "American robin", "Western meadowlark", 
 ]

@@ -1,0 +1,196 @@
+/*beginning*/
+body {
+    background-color: #0d1b2a;
+    color: white;
+    font-family: monospace;
+    margin: auto;
+    user-select: none;
+    font-size: large;
+}/*https://coolors.co/palette/0d1b2a-1b263b-415a77-778da9-e0e1dd*/
+.nd {display: none;}
+
+p {
+    padding: 5px;
+    background-color: #1b263b;
+    border-radius: 10px;
+    margin: 10px;
+    padding: 10px;
+    width: fit-content;
+}
+button {
+    aspect-ratio: 4/1;
+    background-color: #1b263b;
+    border-radius: 20px;
+    border: none;
+    color: white;
+    min-height: 30px;
+    padding: 5px;
+    font-family: monospace;
+}
+button:hover {
+    background-color: #415a77;
+    cursor: pointer;
+    transition-duration: .4s;
+}
+button:not(:hover) {transition-duration: .4s;}
+button:disabled:hover {background-color: #1b263b;}
+input {color: #0d1b2a}
+.cbb.active {background-color: transparent; border: 3px solid #415a77;}
+
+.gc {
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+    gap: 10px;
+}
+.gc4 {grid-template-columns: auto auto auto auto;}
+
+.sect {
+    background-color: #778da9;
+    border-radius: 10px;
+    color: white;
+    cursor: default;
+    font-family: monospace;
+    font-size: 2rem;
+    margin: 25px auto;
+    margin: auto;
+    text-align: center;
+    width: 500px;
+}
+
+/*specifics*/
+#wc, #intro, #firstPuzzles, #rooms, #rooms234 {
+    background-color: black;
+    border-radius: 15px;
+    margin: auto;
+    width: 800px;
+    padding: 5px;
+}
+/*welcome*/
+#wc {
+    font-size: 3rem;
+    margin-top: 25px;
+    background-color: transparent;
+}
+#wc > h1 {
+    background-color: #1b263b;
+    width: 85%;
+    margin: auto;
+    border-radius: 15px;
+    border: 10px solid black;
+    cursor: pointer;
+}
+/*intro*/
+#intro {
+    font-size: 1.3em;
+    margin-top: 25px;
+}
+#intro > button {
+    margin: 10px;
+    width: 25%;
+}
+
+/*puzzles*/
+#p1idk > p, button {margin: 10px}
+#key, .insert, #abcde, #a, #b, #c, #d, #e, #f, #lad, #jsutwatygalts, #fp, #r1idk > p {background-color: #415a77;}
+
+.submit {
+    padding: 10px;
+}
+.submit > input {
+    background-color: #e0e1dd;
+    border-radius: 5px;
+    border: none;
+    min-height: 30px;
+    width: 175px;
+    padding-left: 5px;
+}
+#twenty, #idltg, #scfl, #ilcan {font-size: 1.25em;}
+
+/*room 1*/
+#auttots, #fitb, #ftp {background-color: #415a77;}
+
+/*beyond*/
+.checks {
+    background-color: #415a77;
+}
+.checks:hover {background-color: transparent;}
+#time, #thoopid, #web {color: #38b000;}
+.rightfloaties {
+    float: right;
+    font-size: 1.5rem;
+    color: red;
+}
+.rightfloaties > p {background-color: black; color: black;}
+#auttots > span {margin: 5px; cursor: pointer;}
+#auttots > span:hover {color: #87A0BD;}
+.img {height: 17.5px;}
+
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+    margin: auto;
+    width: 410px;
+    aspect-ratio: 1/1;
+}
+.grid p {
+    border: 1px solid black;
+    margin: 0;
+    background-color: #415a77;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    aspect-ratio: 1 / 1;
+    width: 30px;
+}
+.num {
+    aspect-ratio: 1/1;
+    width: 20px;
+}
+.grid p.noShow {background-color: black;}
+.grid p.dc {background-color: #1b263b;}
+
+/*room 4 mastermind*/
+#room4puzzle {width: 500px; margin: auto;}
+#board {margin: 20px 0;}
+#controls {margin-bottom: 20px;}
+#feedback {color: #d9534f;}
+.color {
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto;
+    width: 500px;
+    margin: 5px auto;
+}
+.color > button {
+    aspect-ratio: 1/1;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    align-self: center;
+}
+#red {background-color: red;}
+#orange {background-color: orange;}
+#yellow {background-color: yellow;}
+#green {background-color: green;}
+#blue {background-color: blue;}
+#purple {background-color: purple;}
+.guess {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    width: 100%;
+    margin: 5px auto;
+}
+.guess > button {aspect-ratio: 1/1;}
+.selected {border: 3px solid white;}
+#feedback {width: 500px; margin: 5px auto; padding-left: 10px;}
+select {
+    background-color: #1b263b;
+    border-radius: 5px;
+    border: none;
+    color: white;
+    font-family: monospace;
+    height: 30px;
+    padding: 5px;
+}
+#demSports {width: 30px;}

@@ -35,9 +35,10 @@ h1 {
 }
 .btn-hmpg {--scale: 2;}
 
-.b1, .b2, .b3, .b4, .b5 {transition-duration: .3s;}
+.b1, .b2, .b3, .b4, .b5, .b6 {transition-duration: .3s;}
 .b1:hover {background-color: #800080;}
 .b2:hover {background-color: #867979;}
 .b3:hover {background-color: #cca43b; color: black;}
 .b4:hover {background-color: #31a353;}
 .b5:hover {background-color: #0077b6;}
+.b6:hover {background-color: #fd4f4f;}

@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width">
+    <title>Escape room</title>
+    <link rel="stylesheet" type="text/css" href="escapar.css">
+    <link rel="icon" type="image/png" href="letterE.png">
+</head>
+<body>
+    <div class="sect"><h1 id="section">placeholder</h1></div>
+    <div class="sect" id="wc"><h1 onclick="wc()">Start</h1></div>
+
+    <div class="nd" id="intro">
+        <p>You got lost, but found a shack with a guy who says he knows the directions on how to get back. You better hope this guy is trustworthy or else you time will be wasted and you may be eternally lost.<br><br>He says, "You must find your way through these puzzles/rooms or cannot tell you the way back." The guy gives you a key and disappears. In front of you, where he was, 4 boxes and a door leading to another room appear.</p>
+        <button onclick="key()">Next</button>
+    </div>
+
+    <div class="nd" id="firstPuzzles">
+        <p id="key">This is the key</p>
+        <div class="gc">
+            <button onclick="puzzle1()" class="cbb" id="p1button">Puzzle #1</button>
+            <button onclick="puzzle2()" class="cbb" id="p2button">Puzzle #2</button>
+            <button onclick="puzzle3()" class="cbb" id="p3button">Puzzle #3</button>
+            <button onclick="puzzle4()" class="cbb" id="p4button">Puzzle #4</button>
+            <button id="r1">Room #1</button>
+        </div>
+
+        <div class="nd" id="puzzle1">
+            <div id="p1idk">
+                <p class="insert">Insert key</p>
+                <button onclick="p1yes()">Insert</button>
+            </div>
+            <div class="nd" id="p1yes">
+                <p id="abcde">Solve: b+(&#8730;c-e)+a</p>
+                <p id="a">a. What date was I born on? mm/<u>dd</u>/yyyy</p>
+                <p id="b">b. How many days are in a year? </p>
+                <p id="c">c. How many problems does Jay-Z have?</p>
+                <p id="d">d. +356 is the international dialing code for where?</p>
+                <p id="e">e. What year did [answer d] become a republic? '_ _ </p>
+                <div class="submit" id="p1AS">
+                    <input id="p1Ans">
+                    <button id="p1Sub">Submit</button>
+                </div>
+                <p id="twenty" class="nd">20</p>
+            </div>
+        </div>
+
+        <div class="nd" id="puzzle2">
+            <div id="p2idk">
+                <p class="insert">Insert phrase</p>
+                <div class="submit">
+                    <input id="p2input">
+                    <button onclick="p2yes()">Submit</button>
+                </div>
+            </div>
+            <div class="nd" id="p2yes">
+                <p id="lad">Help my lines and dots find their way into letters<br>
+                    .--- ..-. --- ...- -... -.- ..-. .. -.. --- -. - .-.. .. -.- . - .... .. ... --. .- -- . --- -. -.- ... --- . .-.. -..
+                </p>
+                <div class="submit" id="p2AS">
+                    <input id="p2Ans">
+                    <button id="p2Sub">Submit</button>
+                </div>
+                <p class="nd" id="idltg">jfovbkf-idontlikethisgame-onksoeld</p>
+            </div>
+        </div>
+
+        <div class="nd" id="puzzle3">
+            <div id="p3idk">
+                <p class="insert">Insert 2 digits</p>
+                <div class="submit">
+                    <input id="p3input">
+                    <button onclick="p3yes()">Submit</button>
+                </div>
+                
+            </div>
+            <div class="nd" id="p3yes">
+                <p id="jsutwatygalts">Just summon up this word and then you've got a lot to say<br>
+                Unscramble:<br>
+                <img class="img" src="letters/S.png" alt="S"><img class="img" src="letters/P.png" alt="P"><img class="img" src="letters/E.png" alt="E"><img class="img" src="letters/R.png" alt="R"><img class="img" src="letters/U.png" alt="U"> - especially; very<br>
+                <img class="img" src="letters/C.png" alt="C"><img class="img" src="letters/I.png" alt="I"><img class="img" src="letters/A.png" alt="A"><img class="img" src="letters/L.png" alt="L"> - 40% of California<br>
+                <img class="img" src="letters/R.png" alt="R"><img class="img" src="letters/I.png" alt="I"><img class="img" src="letters/F.png" alt="F"><img class="img" src="letters/A.png" alt="A"><img class="img" src="letters/G.png" alt="G"><img class="img" src="letters/L.png" alt="L"> - easily broken or damaged - e<br>
+                <img class="img" src="letters/I.png" alt="I"><img class="img" src="letters/T.png" alt="T"><img class="img" src="letters/S.png" alt="S"><img class="img" src="letters/C.png" alt="C"><img class="img" src="letters/I.png" alt="I"> - minimalistic is <b>not</b> a <b>minimal</b> word
+                <div class="submit" id="p3AS">
+                    <input id="p3Ans">
+                    <button id="p3Sub">Submit</button>
+                </div>
+                <p class="nd" id="scfl">supercalifragilistic</p>
+            </div>
+        </div>
+
+        <div class="nd" id="puzzle4">
+            <div id="p4idk">
+                <p class="insert">Insert a word</p>
+                <div class="submit">
+                    <input id="p4input">
+                    <button onclick="p4yes()">Submit</button>
+                </div>
+            </div>
+            <div class="nd" id="p4yes">
+                <p id="fp">Food preferences<br>
+                Please use the paper enigma. WSWNBJZBBLBUKOKDDSBL<br>
+                No enigma? Please use atbash instead. RORPVXSVVHVZMWMLLWOVH</p>
+                <div class="submit" id="p4AS">
+                    <input id="p4Ans">
+                    <button id="p4Sub">Submit</button>
+                </div>
+                <p class="nd" id="ilcan">ilikecheeseandnoodles</p>
+            </div>
+        </div>
+
+        <div class="nd" id="room1">
+            <div id="r1idk">
+                <p>In what order were the puzzles solved?</p>
+                <div class="submit">
+                    <input id="r1Ans">
+                    <button id="r1Sub">Submit</button>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+    <div class="nd" id="rooms">
+        <div class="gc gc4">
+            <button onclick="r1p1()" class="cbb" id="r1button1">Puzzle #1</button>
+            <button onclick="r1p2()" class="cbb" id="r1button2">Puzzle #2</button>
+            <button onclick="r1p3()" class="cbb" id="r1button3">Puzzle #3</button>
+            <button id="toMoreRooms">To more rooms</button>
+        </div>
+
+        <div class="nd" id="r1p1">
+            <div id="r1p1q">
+                <div class="rightfloaties">
+                    <p class="times" id="t">3:00</p>
+                    <p class="times" id="tt">3:30</p>
+                    <p class="times" id="tff">3:45</p>
+                    <p class="times" id="four">4:00</p>
+                    <p class="times" id="five">5:00</p>
+                </div>
+                <p id="auttots">Add up the seconds:<br><br>
+                    <span class="tt">Close Your Eyes by Tech N9ne</span><br>
+                    <span class="five" id="songfive">Drug Ballad by Eminem</span><br>
+                    <span class="t">Sometimes People Suck by Sam Tinnesz</span><br>
+                    <span class="tff">Easy On Me by Adele</span><br>
+                    <span class="four">Easy For You to Say by 5 Seconds of Summer</span><br>
+                    <span class="tt">Fried (She a Vibe) by Future</span><br>
+                    <span class="tff">Icarus by Bastille</span><br>
+                    <span class="four">Face to Face by Daft Punk</span><br>
+                    <span class="tt">One More Hallelujah by Welshly Arms</span><br>
+                    <span class="tff">Dark Places by Beck</span><br>
+                    <span class="t">Let The Road by Rixton</span><br>
+                    <span class="tt">Three-Thirty by AJR</span><br>
+                    <span class="t">I&#8217;m Only Sleeping by The Beatles</span><br>
+                    <span class="tt">Animal by Missio</span><br>
+                    <span class="t">Sorry by SAINT PHNX</span>
+                </p>
+                <div class="submit" id="r1p1AS">
+                    <input id="r1p1Ans">
+                    <button id="r1p1Sub">Submit</button>
+                </div>
+            </div>
+            <p id="time" class="nd">3225 seconds or 53 minutes and 45 seconds</p>
+            <p id="r3Key" class="nd">Here's a key to room 3</p>
+        </div>
+
+        <div class="nd" id="r1p2">
+            <div id="r1p2q">
+                <p id="ftp">Find the phrase: ⠁⠗⠑⠽⠕⠥⠊⠝⠁⠏⠊⠉⠅⠇⠑⠕⠗⠊⠎⠞⠓⠊⠎⠽⠕⠥⠗⠉⠥⠏⠕⠋⠞⠑⠁</p>
+                <div class="submit" id="r1p2AS">
+                    <input id="r1p2Ans">
+                    <button id="r1p2Sub">Submit</button>
+                </div>
+            </div>
+            <p id="thoopid" class="nd">are you in a pickle or is this your cup of tea</p>
+            <p id="r2Key" class="nd">Here's a key to room 2</p>
+        </div>
+
+        <div class="nd" id="r1p3">
+            <div id="r1p3q">
+                <p id="fitb">Fill in the blanks: <br>
+                    You can find answers here: <a href="https://matteroffactyl.netlify.app/" target="_blank" rel="noopener noreferrer">matteroffactyl</a><br><br>
+                    Find each of the following for <span id="state">state</span>:<br><br>
+                    Capital: <select id="fitb1"></select>
+                    <br><br>
+                    Establishment Date: <select id="fitb2"></select>
+                    <br><br>
+                    Motto: <select id="fitb3"></select>
+                    <br><br><br>
+                    What division are these teams in?<br><br>
+                    <span id="mlb">mlb</span>: <select class="demSports" id="fitb4"></select><br><br>
+                    <span id="mls">mls</span>: <select class="demSports" id="fitb5"></select><br><br>
+                    <span id="nba">nba</span>: <select class="demSports" id="fitb6"></select><br><br>
+                    <span id="nfl">nfl</span>: <select class="demSports" id="fitb7"></select><br><br>
+                    <span id="nhl">nhl</span>: <select class="demSports" id="fitb8"></select><br><br>
+                </p>
+                <div class="submit" id="r1p3AS">
+                    <button id="testingstuff">test</button>
+                    <button id="r1p3Sub">Submit</button>
+                </div>
+            </div>
+            <p id="web" class="nd">If you used the link, did you like the webiste?</p>
+            <p id="r4Key" class="nd">Here's a key to room 4</p>
+        </div>
+    </div>
+
+    <div class="nd" id="rooms234">
+        <div class="gc">
+            <button id="r2button" class="cbb" onclick="r2()">Room #2</button>
+            <button id="r3button" class="cbb" onclick="r3()">Room #3</button>
+            <button id="r4button" class="cbb" onclick="r4()">Room #4</button>
+            <button id="r5button" class="cbb" onclick="r5()">Room #5</button>
+            <button id="backFromRooms">Back</button>
+        </div>
+
+        <div class="nd" id="r2">
+            <div id="keyFromP2">
+                <p id="P2KEY">Do you have a key for room 2? <input id="p2keyCheck" type="checkbox"> <button id="check1" class="checks">Submit</button></p>
+            </div>
+            <div class="nd" id="room2puzzle">
+                <p>
+                    Logic Puzzle: <a href="https://docs.google.com/spreadsheets/d/1HBHzKnxgxfj98dYPCPBkCYSISOR0NpXYyJbsNThLe-w/edit?usp=sharing" target="_blank" rel="noopener noreferrer">here</a><br>
+                    Print or make a copy
+                </p>
+                <br><br>
+                <p>Person, Date, Location, Job<br>
+                    Syntax: Z - February 30 - Lincoln - Teacher<br><br>
+                    <input id="pp"> <input id="dt"> <input id="ll"> <input id="jj"><br><br>
+                    <input id="pa"> <input id="da"> <input id="la"> <input id="ja"><br><br>
+                    <input id="pb"> <input id="db"> <input id="lb"> <input id="jb"><br><br>
+                    <input id="pc"> <input id="dc"> <input id="lc"> <input id="jc"><br><br>
+                    <input id="pd"> <input id="dd"> <input id="ld"> <input id="jd"><br><br>
+                </p>
+                <button id="testing">Test</button>
+                <button id="pdlj">Submit</button>
+                <p class="nd" id="r2key4r5">Here's a key for room 5</p>
+            </div>
+        </div>
+        <div class="nd" id="r3">
+            <div id="keyFromP1" class="">
+                <p id="P3KEY">Do you have a key for room 3? <input id="p3keyCheck" type="checkbox"> <button id="check2" class="checks">Submit</button></p>
+            </div>
+            <br>
+            <div class="nd" id="room3puzzle">
+                <div class="grid">
+                    <p>29</p> <p class='dc'>+</p> <p><input id="r32" class='num'></p> <p class='dc'>+</p> <p><input id="r34" class='num'></p> <p class='dc'>=</p> <p>153</p>
+                    <p class='dc'>+</p> <p class='noShow'></p> <p class='dc'>+</p> <p class='noShow'></p> <p class='dc'>+</p> <p class='noShow'></p> <p class='dc'>+</p>
+                    <p><input id="r314" class='num'></p> <p class='dc'>+</p> <p>69</p> <p class='dc'>+</p> <p><input id="r318" class='num'></p> <p class='dc'>=</p> <p>159</p>
+                    <p class='dc'>+</p> <p class='noShow'></p> <p class='dc'>+</p> <p class='noShow'></p> <p class='dc'>+</p> <p class='noShow'></p> <p class='dc'>+</p>
+                    <p><input id="r328" class='num'></p> <p class='dc'>+</p> <p id="hint"><input id="r330" class='num'></p> <p class='dc'>+</p> <p>82</p> <p class='dc'>=</p> <p>156</p>
+                    <p class='dc'>=</p> <p class='noShow'></p> <p class='dc'>=</p> <p class='noShow'></p> <p class='dc'>=</p> <p class='noShow'></p> <p class='dc'>=</p>
+                    <p>158</p> <p class='dc'>+</p> <p>118</p> <p class='dc'>+</p> <p>192</p> <p class='dc'>=</p> <p><input id="r347" class='num'></p>
+                </div>
+                <br>
+                <button id="room3submit">Submit</button>
+                <button id="hintButton">Hint</button>
+            </div>
+        </div>
+        <div class="nd" id="r4">
+            <div id="keyFromP3" class="">
+                <p id="P4KEY">Do you have a key for room 4? <input id="p4keyCheck" type="checkbox"> <button id="check3" class="checks">Submit</button></p>
+            </div>
+            <div id="room4puzzle" class="nd">
+                <div id="board"></div>
+                <div id="controls">
+                    <div class="guess">
+                        <button id="guess1"></button>
+                        <button id="guess2"></button>
+                        <button id="guess3"></button>
+                        <button id="guess4"></button>
+                    </div>
+                    <button onclick="makeGuess()" id="guessButton">Guess</button>
+                </div>
+                <div id="inputs" class="color">
+                    <button id="red"></button>
+                    <button id="orange"></button>
+                    <button id="yellow"></button>
+                    <button id="green"></button>
+                    <button id="blue"></button>
+                    <button id="purple"></button>
+                </div>
+                <div id="feedback"></div>
+                <button class="nd" id="movinOn"></button>
+            </div>
+        </div>
+
+        <div class="nd" id="room5">
+            <p id="room2key">Room 2 key? <input id="r2k" type="checkbox" disabled="true"></p>
+            <p id="room3key">Room 3 key? <input id="r3k" type="checkbox" disabled="true"></p>
+            <p id="room4key">Room 4 key? <input id="r4k" type="checkbox" disabled="true"></p>
+        </div><!--FINISH ROOMS 3,4, KEYS FOR ROOM 5, CSS, IMAGES-->
+    </div>
+    <br><br><br>
+
+<script src="escapar.js"></script>
+<script src="r1p3.js"></script>
+<script>/*loading function*/
+    function onLoadFunctions() {
+        [
+        /*puzzle 1*/'p2input','p3input','p4input','p1Ans','p2Ans','p3Ans','p4Ans','r1p1Ans','r1p2Ans', 'r1Ans',
+        /*fill in the blank*/'fitb1','fitb2','fitb3','fitb4','fitb5','fitb6','fitb7','fitb8',
+        /*logic puzzle*/'da','db','dc','dd','la','lb','lc','ld','ja','jb','jc','jd',
+        /*cross math*/'r32', 'r34', 'r314', 'r318', 'r328', 'r330', 'r347'
+        ].forEach(id => {document.getElementById(id).value = '';});
+        ['r2k','r3k','r4k','p2keyCheck','p3keyCheck','p4keyCheck'
+        ].forEach(id => document.getElementById(id).checked = false);
+        sectValue();
+        randomize();
+    }
+    window.onload = onLoadFunctions();
+    function sectValue() {
+        const sect = document.getElementById('section');
+        const wc = document.getElementById('wc');
+        const intro = document.getElementById('intro');
+        const fP = document.getElementById('firstPuzzles');
+        const rOOMS = document.getElementById('rooms');
+        const r234 = document.getElementById('rooms234');
+        const rOOM5 = document.getElementById('room5');
+
+        function noND(element) {
+            return !element.classList.contains('nd');
+        }
+        const elementsToCheck = [
+            { element: wc, value: 'Welcome'},
+            { element: intro, value: 'Intro' },
+            { element: fP, value: 'Puzzles' },
+            { element: rOOMS, value: 'Room 1' },
+            { element: r234, value: 'More rooms' },
+            { element: rOOM5, value: 'Room 5' }
+        ];
+        for (const item of elementsToCheck) {
+            if (item.element) {
+                if (noND(item.element)) {
+                    sect.textContent = item.value;
+                    break;
+                }
+            }
+        }
+    }
+</script>
+</body>
+</html>
