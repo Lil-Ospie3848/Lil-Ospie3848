@@ -12,7 +12,8 @@
     <div class="sect" id="wc"><h1 onclick="wc()">Start</h1></div>
 
     <div class="nd" id="intro">
-        <p>You got lost, but found a shack with a guy who says he knows the directions on how to get back. You better hope this guy is trustworthy or else you time will be wasted and you may be eternally lost.<br><br>He says, "You must find your way through these puzzles/rooms or cannot tell you the way back." The guy gives you a key and disappears. In front of you, where he was, 4 boxes and a door leading to another room appear.</p>
+        <p>You're on your way home from an exciting day, but got lost because you have a terrible sense of direction. You found a guy selling directions for free. However, in exchange, you need to solve some puzzles because he wants to make sure you're not going to waste his free directions.<br><br>You may only be wasting your time if you can't solve these puzzles, but you're desperate and lost so you agree. He gives you 4 boxes and a key, then disappears.</p>
+        <p>It may be helpful to have a place to write your answers. If you refresh the page, progress will not be saved.</p>
         <button onclick="key()">Next</button>
     </div>
 
@@ -23,7 +24,7 @@
             <button onclick="puzzle2()" class="cbb" id="p2button">Puzzle #2</button>
             <button onclick="puzzle3()" class="cbb" id="p3button">Puzzle #3</button>
             <button onclick="puzzle4()" class="cbb" id="p4button">Puzzle #4</button>
-            <button id="r1">Room #1</button>
+            <button id="r1" class="cbb">Room #1</button>
         </div>
 
         <div class="nd" id="puzzle1">
@@ -32,7 +33,7 @@
                 <button onclick="p1yes()">Insert</button>
             </div>
             <div class="nd" id="p1yes">
-                <p id="abcde">Solve: b+(&#8730;c-e)+a</p>
+                <p id="abcde">Solve: &#8730;(b+(&#8730;c-e)+a)</p>
                 <p id="a">a. What date was I born on? mm/<u>dd</u>/yyyy</p>
                 <p id="b">b. How many days are in a year? </p>
                 <p id="c">c. How many problems does Jay-Z have?</p>
@@ -215,7 +216,7 @@
         </div>
 
         <div class="nd" id="r2">
-            <div id="keyFromP2">
+            <div id="keyFromP2" class="">
                 <p id="P2KEY">Do you have a key for room 2? <input id="p2keyCheck" type="checkbox"> <button id="check1" class="checks">Submit</button></p>
             </div>
             <div class="nd" id="room2puzzle">
@@ -241,7 +242,6 @@
             <div id="keyFromP1" class="">
                 <p id="P3KEY">Do you have a key for room 3? <input id="p3keyCheck" type="checkbox"> <button id="check2" class="checks">Submit</button></p>
             </div>
-            <br>
             <div class="nd" id="room3puzzle">
                 <div class="grid">
                     <p>29</p> <p class='dc'>+</p> <p><input id="r32" class='num'></p> <p class='dc'>+</p> <p><input id="r34" class='num'></p> <p class='dc'>=</p> <p>153</p>
@@ -286,22 +286,44 @@
         </div>
 
         <div class="nd" id="room5">
-            <p id="room2key">Room 2 key? <input id="r2k" type="checkbox" disabled="true"></p>
-            <p id="room3key">Room 3 key? <input id="r3k" type="checkbox" disabled="true"></p>
-            <p id="room4key">Room 4 key? <input id="r4k" type="checkbox" disabled="true"></p>
-        </div><!--FINISH ROOMS 3,4, KEYS FOR ROOM 5, CSS, IMAGES-->
+            <div id="keys" class="">
+                <p id="room2key">Room 2 key? <input id="r2k" type="checkbox" disabled="true"></p>
+                <p id="room3key">Room 3 key? <input id="r3k" type="checkbox" disabled="true"></p>
+                <p id="room4key">Room 4 key? <input id="r4k" type="checkbox" disabled="true"></p>
+            </div>
+            <div id="wordsearch" class="nd"><br>
+                <div id="grid"></div>
+                <p>You're looking for the 50 states</p>
+                <p id="left">You have 402 letters left to find</p>
+                <p>A more printable version is <a href="https://docs.google.com/spreadsheets/d/1M0OayoIrBRnxRSqhZ2Yc1Rq5d4XDwTPCgC7NUc0ViG8/edit?usp=sharing" target="_blank" rel="noopener noreferrer">here</a></p>
+                <p>Please don't do it. Ask for a code<br><br>
+                Insert code <input id="tooLazy"></p>
+            </div>
+            <button id="room5submit">Submit</button>
+        </div>
+    </div>
+
+    <div class="nd" id="finish">
+        <p>Congragulations. You managed to solve all the puzzles and the guy came back. He tells you to wake up becuase this was all a dream.</p>
+        <br>
+        <p>
+            Here are some more links<br>
+            <a href="https://matteroffactyl.netlify.app/" target="_blank" rel="noopener noreferrer">matteroffactyl</a><br>
+            <a href="https://matteroffactyl.netlify.app/escape%20room/mastermind.html" target="_blank" rel="noopener noreferrer">Mastermind</a>
+        </p>
     </div>
     <br><br><br>
 
 <script src="escapar.js"></script>
-<script src="r1p3.js"></script>
+<script src="selectors.js"></script>
 <script>/*loading function*/
     function onLoadFunctions() {
         [
         /*puzzle 1*/'p2input','p3input','p4input','p1Ans','p2Ans','p3Ans','p4Ans','r1p1Ans','r1p2Ans', 'r1Ans',
         /*fill in the blank*/'fitb1','fitb2','fitb3','fitb4','fitb5','fitb6','fitb7','fitb8',
         /*logic puzzle*/'da','db','dc','dd','la','lb','lc','ld','ja','jb','jc','jd',
-        /*cross math*/'r32', 'r34', 'r314', 'r318', 'r328', 'r330', 'r347'
+        /*cross math*/'r32', 'r34', 'r314', 'r318', 'r328', 'r330', 'r347',
+        /*wordsearch*/'tooLazy'
         ].forEach(id => {document.getElementById(id).value = '';});
         ['r2k','r3k','r4k','p2keyCheck','p3keyCheck','p4keyCheck'
         ].forEach(id => document.getElementById(id).checked = false);
@@ -316,7 +338,7 @@
         const fP = document.getElementById('firstPuzzles');
         const rOOMS = document.getElementById('rooms');
         const r234 = document.getElementById('rooms234');
-        const rOOM5 = document.getElementById('room5');
+        const finished = document.getElementById('finish');
 
         function noND(element) {
             return !element.classList.contains('nd');
@@ -327,7 +349,7 @@
             { element: fP, value: 'Puzzles' },
             { element: rOOMS, value: 'Room 1' },
             { element: r234, value: 'More rooms' },
-            { element: rOOM5, value: 'Room 5' }
+            { element: finished, value: 'Finish' }
         ];
         for (const item of elementsToCheck) {
             if (item.element) {

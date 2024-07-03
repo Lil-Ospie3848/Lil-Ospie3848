@@ -1,3 +1,4 @@
+//r1p3
 /*arrays*/
 const stateNames = [
     "Alabama", "Alaska", "Arizona", "Arkansas", "California", "Colorado", "Connecticut", "Delaware", "Florida", "Georgia",
@@ -216,8 +217,50 @@ document.getElementById('r1p3Sub').addEventListener('click', () => {
         document.getElementById('p4keyCheck').checked = true;
         document.getElementById('r1button3').style.color = "#38b000";
         changeButtonBackground({target: document.getElementById('r4button')});
+        sectValue();
     }
     r1p3total = 0;
 });
-//FINISH STATES
-//SHOW THE LOWERCASE, IT WORKS LOWERCASE/UPPERCASE, BUT FOR THE PERSON, SHOW LOWERCASE
+
+//room2
+/*const dates = ['August 30','July 30','June 30','September 30'];
+const locos = ['Houston','Boston','Boulder','San Francisco'];
+const jobss = ['Game Developer','Pilot','Astronaut','Mechanical Engineer'];
+const LPanswers = {
+    da: dates[0],
+    db: dates[1],
+    dc: dates[2],
+    dd: dates[3],
+    la: locos[0],
+    lb: locos[1],
+    lc: locos[2],
+    ld: locos[3],
+    ja: jobss[0],
+    jb: jobss[1],
+    jc: jobss[2],
+    jd: jobss[3],
+}
+function LPoptions(id, array) {
+    const optionsid = document.getElementById(id);
+    optionsid.innerHTML='';
+    array.sort();
+    array.forEach(item => {
+        var option = document.createElement('option');
+        option.value = item;
+        option.textContent = item;
+        optionsid.appendChild(option);
+    });
+    if (id) {optionsid.value = id};
+}
+LPoptions('da', dates);
+LPoptions('db', dates);
+LPoptions('dc', dates);
+LPoptions('dd', dates);
+LPoptions('la', locos);
+LPoptions('lb', locos);
+LPoptions('lc', locos);
+LPoptions('ld', locos);
+LPoptions('ja', jobss);
+LPoptions('jb', jobss);
+LPoptions('jc', jobss);
+LPoptions('jd', jobss);*/

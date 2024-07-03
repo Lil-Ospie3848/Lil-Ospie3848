@@ -23,18 +23,17 @@ function handlePuzzle(puzzleId) {
 
 function checkAnswer(puzzleId, inputId, correctAnswer) {
     const input = document.getElementById(inputId);
-    if (input.value === correctAnswer) {
+    const input1 = input.value.trim().replace(/\s/g, '').toLowerCase();
+    if (input1 === correctAnswer) {
         take(puzzleId + 'yes');
         add(puzzleId + 'idk');
-    } else {
-        input.value = '';
-    }
+    } else { input.value = '';}
 }
 function puzzle2() { handlePuzzle('puzzle2'); }
-function p2yes()   { checkAnswer('p2', 'p2input', 'ilikecheeseandnoodles'); }
 function puzzle3() { handlePuzzle('puzzle3'); }
-function p3yes()   { checkAnswer('p3', 'p3input', '20'); }
 function puzzle4() { handlePuzzle('puzzle4'); }
+function p2yes()   { checkAnswer('p2', 'p2input', 'ilikecheeseandnoodles'); }
+function p3yes()   { checkAnswer('p3', 'p3input', '20'); }
 function p4yes()   { checkAnswer('p4', 'p4input', 'supercalifragilistic'); }
 
 function room1() {take('room1'); addMultiple(['puzzle1','puzzle2','puzzle3','puzzle4']);}
@@ -49,14 +48,12 @@ function setupPuzzle(subId, ansId, correctAnswer, toggleIds, colorId) {
     answerField.value = '';
 
     subButton.addEventListener('click', () => {
-        if (answerField.value === correctAnswer) {
+        const answerField1 = answerField.value.trim().replace(/\s/g, '').toLowerCase();
+        if (answerField1 === correctAnswer) {
             document.getElementById(colorId).style.color = "#38b000";
             toggleIds.forEach(id => document.getElementById(id).classList.toggle('nd'));
             greenNum++;
-            //console.log(greenNum);
-        } else {
-            answerField.value = '';
-        }
+        } else {answerField.value = '';}
     });
 }
 
@@ -68,18 +65,18 @@ setupPuzzle('p4Sub', 'p4Ans', 'ilikecheeseandnoodles', ['ilcan', 'fp', 'p4AS'], 
 /*greens*/
 const greens = ['twenty', 'idltg', 'scfl', 'ilcan'];
 const r1 = document.getElementById('r1');
-r1.addEventListener('click', () => {
-    if (greenNum === 4) {room1();}
-    //else {console.log(`Not all elements are green yet.`);}
-});
+r1.addEventListener('click', () => {if (greenNum === 4) {room1();}});
+
 const rooms = document.getElementById('rooms');
 const toRooms = document.getElementById('r1Sub');
 toRooms.addEventListener('click', () => {
-    if (document.getElementById('r1Ans').value === '1342') {
+    if (document.getElementById('r1Ans').value.trim() === '1342') {
         rooms.classList.remove('nd');
         document.getElementById('firstPuzzles').classList.add('nd');
+        sectValue();
     } //else {console.log('Not all elements are visible.'); document.getElementById('r1Ans').value = '';}
 });
+
 
 /*room 1*/
 let r1p3total = 0;
@@ -97,7 +94,8 @@ const fitbElements = Array.from({ length: 8 }, (_, i) => document.getElementById
 const [fitb1, fitb2, fitb3, fitb4, fitb5, fitb6, fitb7, fitb8] = fitbElements;
 
 function r1checkAnswer (input, correctValue, elementsToShow, elementsToHide, title) {
-    if (input.value === correctValue) {
+    const input1 = input.value.trim().replace(/\s/g, '').toLowerCase();
+    if (input1 === correctValue) {
         elementsToShow.forEach(id => document.getElementById(id).classList.remove('nd'));
         elementsToHide.forEach(id => document.getElementById(id).classList.add('nd'));
         input.style.color = "#38b000";
@@ -111,13 +109,13 @@ function puzzles1and2(submitButton, input, correctValue, elementsToShow, element
     const p3keyCheck = document.getElementById('p3keyCheck');
     submitButton.addEventListener('click', () => {
         r1checkAnswer (input, correctValue, elementsToShow, elementsToHide, title);
-        if (roomToShow === 'r2') {r2(); p2keyCheck.checked = true; changeButtonBackground({target: document.getElementById('r2button')});}
+             if (roomToShow === 'r2') {r2(); p2keyCheck.checked = true; changeButtonBackground({target: document.getElementById('r2button')});}
         else if (roomToShow === 'r3') {r3(); p3keyCheck.checked = true; changeButtonBackground({target: document.getElementById('r3button')});}
         sectValue();
     });
 }
 puzzles1and2(r1p1Sub, r1p1Ans, '3225', ['r1p1q', 'time', 'r3Key', 'r3button', 'toMoreRooms'], ['r1p1q', 'r1p1AS'], 'r3','r1button1');
-puzzles1and2(r1p2Sub, r1p2Ans, 'are you in a pickle or is this your cup of tea', ['r1p2q', 'thoopid', 'r2Key', 'r2button', 'toMoreRooms'], ['r1p2q', 'r1p2AS'], 'r2','r1button2');
+puzzles1and2(r1p2Sub, r1p2Ans, 'areyouinapickleoristhisyourcupoftea', ['r1p2q', 'thoopid', 'r2Key', 'r2button', 'toMoreRooms'], ['r1p2q', 'r1p2AS'], 'r2','r1button2');
 
 /*transition*/
 function r2() {take('r2'); take('r5button'); add('r3'); add('r4'); add('room5');}
@@ -137,7 +135,6 @@ document.getElementById('backFromRooms').addEventListener('click', () => {
 function toggleRooms() {
     document.getElementById('rooms234').classList.toggle('nd');
     document.getElementById('rooms').classList.toggle('nd');
-    autoCBB();
 }
 function hideRoom1() {
     const time = document.getElementById('time');
@@ -147,6 +144,7 @@ function hideRoom1() {
         document.getElementById('backFromRooms').classList.add('nd');
     }
 }
+
 
 /*keyButtons() in rooms234*/
 function keyButtons(button, checkbox, confirmationDiv, puzzleDiv) {
@@ -162,14 +160,15 @@ keyButtons('check2','p3keyCheck','keyFromP1','room3puzzle');
 keyButtons('check3','p4keyCheck','keyFromP3','room4puzzle');
 
 /*rooms 2 3 4 (5)*/
-function disablingButton(div, buttonToDisable) {
+function disablingButton(div, buttonToDisable, wordsToGreen) {
     document.getElementById(div).classList.add('nd');
     const bTD = document.getElementById(buttonToDisable);
     bTD.disabled = true;
     bTD.style.color = '#38b000';
     bTD.style.cursor = 'default';
     document.getElementById('room5').classList.remove('nd');
-    changeButtonBackground({target: document.getElementById('r5button')})
+    document.getElementById(wordsToGreen).style.color = '#38b000';
+    changeButtonBackground({target: document.getElementById('r5button')});
 }
 /*room 2*/
 ['p2keyCheck','p3keyCheck','p4keyCheck'].forEach(id => {document.getElementById(id).disabled = true;});
@@ -201,37 +200,62 @@ let lpcount = 0;
 function logicPuzzle(lpInput, lpAnswer) {
     if (lpInput && lpAnswer) {
         const LPInput = document.getElementById(lpInput);
-        if (LPInput.value === '') {
+        const lpinput = LPInput.value.trim().replace(/\s/g, '').toLowerCase();
+        if (lpinput === '') {
             LPInput.style.color = "black";
-        } else if(LPInput.value === lpAnswer) {
+        } else if(lpinput === lpAnswer) {
             lpcount++;
             LPInput.style.color = "black"
         } else {LPInput.style.color = "red"}
     }
 }
 document.getElementById('pdlj').addEventListener('click', () => {
-    //lpcount = 0;
-    logicPuzzle('da', 'August 30');
-    logicPuzzle('la', 'Houston');
-    logicPuzzle('ja', 'Game Developer');
-    logicPuzzle('db', 'July 30');
-    logicPuzzle('lb', 'Boston');
-    logicPuzzle('jb', 'Pilot');
-    logicPuzzle('dc', 'June 30');
-    logicPuzzle('lc', 'Boulder');
-    logicPuzzle('jc', 'Astronaut');
-    logicPuzzle('dd', 'September 30');
-    logicPuzzle('ld', 'San Francisco');
-    logicPuzzle('jd', 'Mechanical Engineer');
-
+    lpcount = 0;
+    logicPuzzle('da', 'august30');
+    logicPuzzle('la', 'houston');
+    logicPuzzle('ja', 'gamedeveloper');
+    logicPuzzle('db', 'july30');
+    logicPuzzle('lb', 'boston');
+    logicPuzzle('jb', 'pilot');
+    logicPuzzle('dc', 'june30');
+    logicPuzzle('lc', 'boulder');
+    logicPuzzle('jc', 'astronaut');
+    logicPuzzle('dd', 'september30');
+    logicPuzzle('ld', 'sanfrancisco');
+    logicPuzzle('jd', 'mechanicalengineer');
     if (lpcount === 12) {
         document.getElementById('r2k').checked = true;
-        disablingButton('r2', 'r2button');
+        disablingButton('r2', 'r2button', 'room2key');
     }
 });
 document.getElementById('testing').addEventListener('click', () => {
-    lpcount = 12;
-})
+    function insertAnswer(id) {
+             if (id === 'da') {document.getElementById(id).value = 'August 30';}
+        else if (id === 'la') {document.getElementById(id).value = 'Houston';}
+        else if (id === 'ja') {document.getElementById(id).value = 'Game Developer';}
+        else if (id === 'db') {document.getElementById(id).value = 'July 30';}
+        else if (id === 'lb') {document.getElementById(id).value = 'Boston';}
+        else if (id === 'jb') {document.getElementById(id).value = 'Pilot';}
+        else if (id === 'dc') {document.getElementById(id).value = 'June 30';}
+        else if (id === 'lc') {document.getElementById(id).value = 'Boulder';}
+        else if (id === 'jc') {document.getElementById(id).value = 'Astronaut';}
+        else if (id === 'dd') {document.getElementById(id).value = 'September 30';}
+        else if (id === 'ld') {document.getElementById(id).value = 'San Francisco';}
+        else if (id === 'jd') {document.getElementById(id).value = 'Mechanical Engineer';}
+    }
+    insertAnswer('da');
+    insertAnswer('la');
+    insertAnswer('ja');
+    insertAnswer('db');
+    insertAnswer('lb');
+    insertAnswer('jb');
+    insertAnswer('dc');
+    insertAnswer('lc');
+    insertAnswer('jc');
+    insertAnswer('dd');
+    insertAnswer('ld');
+    insertAnswer('jd');
+});
 
 /*room 3*/
 let puzzle3count = 0;
@@ -259,7 +283,7 @@ document.getElementById('room3submit').addEventListener('click', () => {
 
     if (allInputsFilled && puzzle3count === 7 && (r330Input ? r330Input.value !== '' : document.getElementById('hint').innerHTML === '1')) {
         document.getElementById('r3k').checked = true;
-        disablingButton('r3', 'r3button');
+        disablingButton('r3', 'r3button', 'room3key');
     }
 });
 
@@ -364,7 +388,7 @@ function endgame(value) {
         if (value === 'Finished') {
             document.getElementById('guessButton').classList.add('nd');
             document.getElementById('r4k').checked = true;
-            disablingButton('r4', 'r4button');
+            disablingButton('r4', 'r4button','room4key');
         } else if (value === 'Try again') {
             document.getElementById('board').innerHTML = '';
             document.getElementById('controls').classList.remove('nd');
@@ -480,6 +504,7 @@ const bd = [
     { button: 'p2button', div: 'puzzle2' },
     { button: 'p3button', div: 'puzzle3' },
     { button: 'p4button', div: 'puzzle4' },
+    { button: 'r1', div: 'room1' },
     { button: 'r1button1', div: 'r1p1' },
     { button: 'r1button2', div: 'r1p2' },
     { button: 'r1button3', div: 'r1p3' },
@@ -499,21 +524,6 @@ const buttonState = {};
 
 function noND(element) {return !element.classList.contains('nd');}
 function autoCBB() {
-    
-    const bd = [
-        { button: 'p1button', div: 'puzzle1' },
-        { button: 'p2button', div: 'puzzle2' },
-        { button: 'p3button', div: 'puzzle3' },
-        { button: 'p4button', div: 'puzzle4' },
-        { button: 'r1button1', div: 'r1p1' },
-        { button: 'r1button2', div: 'r1p2' },
-        { button: 'r1button3', div: 'r1p3' },
-        { button: 'r2button', div: 'r2' },
-        { button: 'r3button', div: 'r3' },
-        { button: 'r4button', div: 'r4' },
-        { button: 'r5button', div: 'room5' }
-    ];
-    
     for (const item of bd) {
         const divElement = document.getElementById(item.div);
         if (divElement && noND(divElement)) {
@@ -521,11 +531,8 @@ function autoCBB() {
             if (buttonElement) {
                 if (buttonState[item.div] && buttonState[item.div] !== item.button) {
                     const lastActiveButton = document.getElementById(buttonState[item.div]);
-                    if (lastActiveButton) {
-                        lastActiveButton.classList.remove('active');
-                    }
+                    if (lastActiveButton) {lastActiveButton.classList.remove('active');}
                 }
-                
                 buttonElement.classList.add('active');
                 buttonState[item.div] = item.button;
             }
@@ -558,9 +565,7 @@ butts.forEach(button => {
 autoCBB();
 
 /*room 1 puzzle 1*/
-function setTextColor(elem, color) {
-    document.getElementById(elem).style.color = color;
-}
+function setTextColor(elem, color) {document.getElementById(elem).style.color = color;}
 function resetColors(classNames) {
     classNames.forEach(className => {
         const classElems = document.getElementsByClassName(className);
@@ -586,3 +591,95 @@ addEventListeners('tff');
 addEventListeners('t');
 addEventListeners('tt');
 addEventListeners('five');
+
+//room 5
+const gridData = [
+    "M V C C N L H B U B A A W X N L B K I N D I A N A",
+    "I E B I N E B R A S K A U Q O H O O O E E C M R G",
+    "C R A R I Z O N A N O B X U R Y H K Y W C Y A Z F",
+    "H M M A T E N N E S S E E K T G I L T Y I E S P Z",
+    "I O Y M C O L O R A D O W A H E O A E O F W S I P",
+    "G N C J N E L V L D R U D L D O O H X R N S A J E",
+    "A T N E W J E R S E Y E P A A R K O A K E P C U N",
+    "N W E S T V I R G I N I A S K G E M S J W O H H N",
+    "A C B Q U P A R S H V E N K O I N A W O H M U K S",
+    "X M I N N E S O T A I B H A T A T A A T A A S S Y",
+    "M A Q A K N S F L O R I D A A B U S S C M R E O L",
+    "A P Y Y I O W R W N E W M E X I C O H H P Y T U V",
+    "I Z N X N R L O U I S I A N A T K U I C S L T T A",
+    "N C F W E T T F C M H O V C D J Y T N W H A S H N",
+    "E O U I V H Q K T A I Z N A N B U H G I I N C D I",
+    "C N T L A C E J M J L S C T W Z I C T S R D W A A",
+    "A N A L D A R H O D E I S L A N D A O C E Y Y K V",
+    "L E H I A R K F U D C Q F O L W A R N O D Y O O I",
+    "A C K N E O W Y O M I N G O U A H O G N A J R T R",
+    "B T A O B L Y W J Z T D H F R R O L G S S S E A G",
+    "A I N I A I K T R U I R S L Q N I I I I I I I P G",
+    "M C S S T N H A W A I I S X R J I N K N F O O O N",
+    "A U A R K A N S A S H M O N T A N A H T M W N J I",
+    "K T S S T Z S D W M X N R C G G D E L A W A R E A",
+    "P G V H R X X F R A U H M I S S I S S I P P I Z P"
+];
+
+// Function to create the grid
+function createGrid(data) {
+    const gridContainer = document.getElementById('grid');
+    
+    // Loop through each row data
+    data.forEach(rowData => {
+        const row = document.createElement('div');
+        row.className = 'grid-row';
+        const characters = rowData.split(' ');
+    
+        characters.forEach(char => {
+            const cell = document.createElement('div');
+            cell.className = 'grid-cell';
+            cell.textContent = char;
+            cell.addEventListener('click', () => {cell.classList.toggle('clicked');});
+            row.appendChild(cell);
+        });
+        gridContainer.appendChild(row);
+    });
+}
+createGrid(gridData);
+
+
+const lettersleft = document.getElementById('left');
+let leftamount = 402;
+function changeTextColor() {
+    leftamount = 402;
+    const cells = document.querySelectorAll('.grid-cell');
+    const arrayTargets = [3,4,5,6,7,8,9,10,11,12,13,14,16,17,18,28,29,38,39,41,44,46,47,49,50,60,61,62,63,64,66,69,71,72,74,75,78,79,89,96,97,99,100,103,104,113,121,122,124,128,129,130,131,132,133,134,135,136,137,138,142,147,149,162,163,172,174,195,197,199,201,202,203,204,205,206,207,208,209,210,211,212,213,218,220,226,236,237,238,245,252,253,254,255,257,266,270,277,278,279,280,282,283,284,295,302,303,304,316,320,328,329,332,333,336,337,338,339,340,341,357,358,359,362,363,364,365,366,367,373,376,382,383,384,385,388,389,390,391,398,422,423,432,433,434,435,436,437,440,441,446,447,455,466,469,471,472,480,482,483,484,485,486,487,488,489,494,496,497,505,507,508,509,510,511,512,513,514,515,519,521,524,530,538,539,540,541,544,546,549,561,569,570,571,574,576,579,580,581,582,583,584,585,586,587,588,589,590,591,601,602,603,604,605,606,607,608,609,610,611,612,624,625];
+    const arrayTargetsMinus = arrayTargets.map(num => num - 1);
+    cells.forEach((cell, index) => {
+        if (cell.classList.contains('clicked')) {
+            if (!arrayTargetsMinus.includes(index)) {
+                cell.style.color = '#38b000';
+                leftamount--;
+                lettersleft.innerText = 'You have ' + leftamount + ' letters left to find.';
+            } else {cell.classList.remove('clicked');}
+        }
+    });
+}
+
+const room5submit = document.getElementById('room5submit');
+const keys = document.getElementById('keys');
+const wordsearch = document.getElementById('wordsearch');
+const r2kcheck = document.getElementById('r2k');
+const r3kcheck = document.getElementById('r3k');
+const r4kcheck = document.getElementById('r4k');
+room5submit.addEventListener('click', changeTextColor);
+room5submit.addEventListener('click', () => {
+    if (!keys.classList.contains('nd')) {
+        if (r2kcheck.checked === true && r3kcheck.checked === true && r4kcheck.checked === true) {
+            keys.classList.add('nd');
+            wordsearch.classList.remove('nd');
+        }
+    } else if (!wordsearch.classList.contains('nd')) {
+        if (leftamount === 0 || document.getElementById('tooLazy').value === '7058') {
+            document.getElementById('rooms234').classList.add('nd');
+            document.getElementById('finish').classList.remove('nd');
+            sectValue();
+        }
+    }
+});

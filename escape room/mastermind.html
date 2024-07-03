@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width">
+    <title>Mastermind</title>
+    <link rel="stylesheet" type="text/css" href="escapar.css">
+    <link rel="icon" type="image/png" href="letterE.png">
+</head>
+<body>
+    <div style="width: 70%; margin: auto;">
+        <div id="board"></div>
+        <div id="controls">
+            <div class="guess">
+                <button id="guess1"></button>
+                <button id="guess2"></button>
+                <button id="guess3"></button>
+                <button id="guess4"></button>
+            </div>
+            <button onclick="makeGuess()" id="guessButton">Guess</button>
+        </div>
+        <div id="inputs" class="color">
+            <button id="red"></button>
+            <button id="orange"></button>
+            <button id="yellow"></button>
+            <button id="green"></button>
+            <button id="blue"></button>
+            <button id="purple"></button>
+        </div>
+        <div id="feedback"></div>
+        <button class="nd" id="movinOn"></button> 
+    </div>
+
+<script src="mastermind.js"></script>
+</body>
+</html>
