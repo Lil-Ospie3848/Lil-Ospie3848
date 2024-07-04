@@ -93,6 +93,8 @@ const r1p3Sub = document.getElementById('r1p3Sub');
 const fitbElements = Array.from({ length: 8 }, (_, i) => document.getElementById(`fitb${i + 1}`));
 const [fitb1, fitb2, fitb3, fitb4, fitb5, fitb6, fitb7, fitb8] = fitbElements;
 
+let p1value = 0;
+let p2value = 0;
 function r1checkAnswer (input, correctValue, elementsToShow, elementsToHide, title) {
     const input1 = input.value.trim().replace(/\s/g, '').toLowerCase();
     if (input1 === correctValue) {
@@ -102,6 +104,8 @@ function r1checkAnswer (input, correctValue, elementsToShow, elementsToHide, tit
         document.getElementById(title).style.color = "#38b000";
         document.getElementById('rooms').classList.add('nd');
         document.getElementById('rooms234').classList.remove('nd');
+        if (correctValue === '3225') {p1value++;}
+        else if (correctValue === 'areyouinapickleoristhisyourcupoftea') {p2value++;}
     } else {input.value = '';}
 };
 function puzzles1and2(submitButton, input, correctValue, elementsToShow, elementsToHide, roomToShow, title) {
@@ -109,41 +113,53 @@ function puzzles1and2(submitButton, input, correctValue, elementsToShow, element
     const p3keyCheck = document.getElementById('p3keyCheck');
     submitButton.addEventListener('click', () => {
         r1checkAnswer (input, correctValue, elementsToShow, elementsToHide, title);
-             if (roomToShow === 'r2') {r2(); p2keyCheck.checked = true; changeButtonBackground({target: document.getElementById('r2button')});}
-        else if (roomToShow === 'r3') {r3(); p3keyCheck.checked = true; changeButtonBackground({target: document.getElementById('r3button')});}
-        sectValue();
+        if (p1value === 1 || p2value === 1) {
+            if (roomToShow === 'r2') {r2(); p2keyCheck.checked = true; changeButtonBackground({target: document.getElementById('r2button')});}
+            else if (roomToShow === 'r3') {r3(); p3keyCheck.checked = true; changeButtonBackground({target: document.getElementById('r3button')});}
+            sectValue();
+        }
     });
 }
 puzzles1and2(r1p1Sub, r1p1Ans, '3225', ['r1p1q', 'time', 'r3Key', 'r3button', 'toMoreRooms'], ['r1p1q', 'r1p1AS'], 'r3','r1button1');
 puzzles1and2(r1p2Sub, r1p2Ans, 'areyouinapickleoristhisyourcupoftea', ['r1p2q', 'thoopid', 'r2Key', 'r2button', 'toMoreRooms'], ['r1p2q', 'r1p2AS'], 'r2','r1button2');
 
 /*transition*/
-function r2() {take('r2'); take('r5button'); add('r3'); add('r4'); add('room5');}
-function r3() {take('r3'); take('r5button'); add('r2'); add('r4'); add('room5');}
-function r4() {take('r4'); take('r5button'); add('r2'); add('r3'); add('room5');}
-function r5() {take('room5'); add('r2'); add('r3'); add('r4');}
-document.getElementById('toMoreRooms').addEventListener('click', () => {
-    toggleRooms();
-    sectValue();
-    hideRoom1();
-});
-document.getElementById('backFromRooms').addEventListener('click', () => {
-    toggleRooms();
-    sectValue();
-    hideRoom1();
-});
+function manageRooms(takeId, addIds) {take(takeId); addIds.forEach(id => add(id));}
+function r2() { manageRooms('r2', ['r3', 'r4', 'room5']); take('r5button'); }
+function r3() { manageRooms('r3', ['r2', 'r4', 'room5']); take('r5button'); }
+function r4() { manageRooms('r4', ['r2', 'r3', 'room5']); take('r5button'); }
+function r5() { manageRooms('room5', ['r2', 'r3', 'r4']); }
 function toggleRooms() {
-    document.getElementById('rooms234').classList.toggle('nd');
-    document.getElementById('rooms').classList.toggle('nd');
-}
-function hideRoom1() {
-    const time = document.getElementById('time');
-    const thoopid = document.getElementById('thoopid');
-    const web = document.getElementById('web');
-    if (time && thoopid && web && !time.classList.contains('nd') && !thoopid.classList.contains('nd') && !web.classList.contains('nd')) {
-        document.getElementById('backFromRooms').classList.add('nd');
+    const rooms234 = document.getElementById('rooms234');
+    const rooms = document.getElementById('rooms');
+    const toggleClass = 'nd';
+
+    rooms234.classList.toggle(toggleClass);
+    rooms.classList.toggle(toggleClass);
+
+    if (!rooms.classList.contains(toggleClass)) {
+        [1, 2, 3].forEach(i => {
+            const button = document.getElementById(`r1button${i}`);
+            const room = document.getElementById(`r1p${i}`);
+            if (!room.classList.contains(toggleClass)) {changeButtonBackground({ target: button });}
+        });
+    } else if (!rooms234.classList.contains(toggleClass)) {
+        ['r2', 'r3', 'r4'].forEach(r => {
+            const button = document.getElementById(`${r}button`);
+            const room = document.getElementById(r);
+            if (!room.classList.contains(toggleClass)) {changeButtonBackground({ target: button });}
+        });
+        const room5Button = document.getElementById('r5button');
+        const room5 = document.getElementById('room5');
+        if (!room5.classList.contains(toggleClass)) {changeButtonBackground({ target: room5Button });}
     }
 }
+function hideRoom1() {
+    const elements = ['time', 'thoopid', 'web'].map(id => document.getElementById(id));
+    if (elements.every(el => el && !el.classList.contains('nd'))) {document.getElementById('backFromRooms').classList.add('nd');}
+}
+['toMoreRooms', 'backFromRooms'].forEach(id => {document.getElementById(id).addEventListener('click', () => {toggleRooms(); sectValue(); hideRoom1();});});
+
 
 
 /*keyButtons() in rooms234*/
@@ -227,34 +243,6 @@ document.getElementById('pdlj').addEventListener('click', () => {
         document.getElementById('r2k').checked = true;
         disablingButton('r2', 'r2button', 'room2key');
     }
-});
-document.getElementById('testing').addEventListener('click', () => {
-    function insertAnswer(id) {
-             if (id === 'da') {document.getElementById(id).value = 'August 30';}
-        else if (id === 'la') {document.getElementById(id).value = 'Houston';}
-        else if (id === 'ja') {document.getElementById(id).value = 'Game Developer';}
-        else if (id === 'db') {document.getElementById(id).value = 'July 30';}
-        else if (id === 'lb') {document.getElementById(id).value = 'Boston';}
-        else if (id === 'jb') {document.getElementById(id).value = 'Pilot';}
-        else if (id === 'dc') {document.getElementById(id).value = 'June 30';}
-        else if (id === 'lc') {document.getElementById(id).value = 'Boulder';}
-        else if (id === 'jc') {document.getElementById(id).value = 'Astronaut';}
-        else if (id === 'dd') {document.getElementById(id).value = 'September 30';}
-        else if (id === 'ld') {document.getElementById(id).value = 'San Francisco';}
-        else if (id === 'jd') {document.getElementById(id).value = 'Mechanical Engineer';}
-    }
-    insertAnswer('da');
-    insertAnswer('la');
-    insertAnswer('ja');
-    insertAnswer('db');
-    insertAnswer('lb');
-    insertAnswer('jb');
-    insertAnswer('dc');
-    insertAnswer('lc');
-    insertAnswer('jc');
-    insertAnswer('dd');
-    insertAnswer('ld');
-    insertAnswer('jd');
 });
 
 /*room 3*/

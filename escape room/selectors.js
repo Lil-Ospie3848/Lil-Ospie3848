@@ -173,27 +173,6 @@ function puzz3ans(inputId, answer) {
     if (input.value.trim().toLowerCase() === answer.toLowerCase()) r1p3total++;
 }
 
-document.getElementById('testingstuff').addEventListener('click', () => {
-    function insertAnswer(id) {
-        if (id === 'fitb1') {document.getElementById(id).value = answers.capital;}
-        else if (id === 'fitb2') {document.getElementById(id).value = answers.estab}
-        else if (id === 'fitb3') {document.getElementById(id).value = answers.motto}
-        else if (id === 'fitb4') {document.getElementById(id).value = answers.mlb}
-        else if (id === 'fitb5') {document.getElementById(id).value = answers.mls}
-        else if (id === 'fitb6') {document.getElementById(id).value = answers.nba}
-        else if (id === 'fitb7') {document.getElementById(id).value = answers.nfl}
-        else if (id === 'fitb8') {document.getElementById(id).value = answers.nhl}
-    }
-    insertAnswer('fitb1');
-    insertAnswer('fitb2');
-    insertAnswer('fitb3');
-    insertAnswer('fitb4');
-    insertAnswer('fitb5');
-    insertAnswer('fitb6');
-    insertAnswer('fitb7');
-    insertAnswer('fitb8');
-});
-
 document.getElementById('r1p3Sub').addEventListener('click', () => {
     const selectedCapital = document.getElementById('fitb1').value;
     const selectedEstab = document.getElementById('fitb2').value;
