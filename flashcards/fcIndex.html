@@ -1,0 +1,57 @@
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width">
+    <title>Trivia</title>
+    <link rel="stylesheet" type ="text/css" href="fcStyle.css">
+    <link rel="icon" type="image/png" href="../mof2.png">
+</head>
+<body>
+    <h1>Hello</h1>
+    <br>
+    <div class="fifty center nd">
+        <h2>hi</h2>
+        <div class="grid"> 
+            <div class="card">
+                <p class="char">你</p>
+                <div class="co">
+                    <p class="lett c1">n&#464;</p>
+                    <p class="lett c2">you</p>
+                </div>
+            </div>
+            <div class="card">
+                <p class="char">我</p>
+                <div class="co">
+                    <p class="lett c1">w&#466;</p>
+                    <p class="lett c2">I, my, me</p>
+                </div>
+            </div>
+            <div class="card">
+                <p class="char">不</p>
+                <div class="co">
+                    <p class="lett c1">b&#249;</p>
+                    <p class="lett c2">no, not</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="fcMain.js"></script>
+    <script>//adjusting font
+        function adjustFontSize() {
+            const containers = document.querySelectorAll('.co');
+            containers.forEach(container => {
+                const texts = container.querySelectorAll('.lett');
+                texts.forEach(text => {
+                    let fontSize = 16;
+                    text.style.fontSize = fontSize + 'px';
+                    while (text.scrollWidth > container.clientWidth || text.scrollHeight > container.clientHeight) {
+                        fontSize -= 1;
+                        text.style.fontSize = fontSize + 'px';
+                    }
+                })
+            })
+        }
+        window.onload = adjustFontSize;
+    </script>
+</body>
+</html>
