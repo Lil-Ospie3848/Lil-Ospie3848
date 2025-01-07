@@ -8,34 +8,14 @@
 </head>
 <body>
     <h1>Hello</h1>
-    <br>
-    <div class="fifty center nd">
-        <h2>hi</h2>
-        <div class="grid"> 
-            <div class="card">
-                <p class="char">你</p>
-                <div class="co">
-                    <p class="lett c1">n&#464;</p>
-                    <p class="lett c2">you</p>
-                </div>
-            </div>
-            <div class="card">
-                <p class="char">我</p>
-                <div class="co">
-                    <p class="lett c1">w&#466;</p>
-                    <p class="lett c2">I, my, me</p>
-                </div>
-            </div>
-            <div class="card">
-                <p class="char">不</p>
-                <div class="co">
-                    <p class="lett c1">b&#249;</p>
-                    <p class="lett c2">no, not</p>
-                </div>
-            </div>
-        </div>
+
+    <div class="fifty center">
+        <button class="box" id="box">Words</button>
     </div>
+    <br>
+
     <script src="fcMain.js"></script>
+    <script src="fcAP.js"></script>
     <script>//adjusting font
         function adjustFontSize() {
             const containers = document.querySelectorAll('.co');
@@ -48,10 +28,23 @@
                         fontSize -= 1;
                         text.style.fontSize = fontSize + 'px';
                     }
-                })
-            })
+                });
+            });
         }
         window.onload = adjustFontSize;
+    </script>
+    <script>//hiding text
+        const hideText = document.getElementById('box');
+        hideText.addEventListener('click', function() {
+            const texts = document.querySelectorAll('.co');
+            const squares = document.querySelectorAll('.card');
+            texts.forEach(elem => {
+                elem.classList.toggle('nd');
+                if (elem.classList.contains('nd')) 
+                {squares.forEach(elem => {elem.style.width='15vh';});}
+                else {squares.forEach(elem => {elem.style.width='30vh';});}
+            });
+        });
     </script>
 </body>
 </html>

@@ -16,13 +16,19 @@ h2 {
     text-align: left;
     padding: 5px;
 }
-p {
-    aspect-ratio: 1/1;
-    height: 12vh;
-    margin: 10px;
-    text-align: center;
-}
 
+
+.box {
+    aspect-ratio: 1/1;
+    font-size: 1.5rem;
+    width: 15%;
+    cursor: pointer;
+    background-color: green;
+    border: none;
+    color: white;
+    border-radius: 10px;
+}
+.box:hover {background-color: #36b636; color: black;}
 .grid {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -30,7 +36,7 @@ p {
     padding: 5px;
     gap: 10px;
 }
-.fifty {width: 50%;}
+.fifty {max-width: 50%;}
 .center {margin: auto;}
 .card {
     border-radius: 15px;
@@ -41,7 +47,33 @@ p {
     grid-template-columns: 1fr 1fr;
     place-items: center;
 }
+.card > p {
+    aspect-ratio: 1/1;
+    height: 12vh;
+    margin: 10px;
+    text-align: center;
+}
 .co {grid-template-columns: 1fr 1fr;}
+.unoCo {grid-template-columns: 1fr;}
+.card2 {
+    border-radius: 15px;
+    background-color: #004346;
+    width: 95%;
+    margin: auto;
+    display: grid;
+    place-items: center;
+}
+.card2 > p {
+    /*background-color: gray;*/
+    font-size: 1.5rem;
+    margin: 10px;
+    text-align: left;
+}
+.term {
+    background-color: #00747A;
+    padding: 5px;
+    border-radius: 5px;
+}
 .nd {display: none;}
 .char {
     font-size: 3rem;

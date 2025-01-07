@@ -1,4 +1,4 @@
-function makeCard(character, pinyin, translation) {
+function makeChineseCard(character, pinyin, translation) {
     return `
         <div class="card">
             <p class="char">${character}</p>
@@ -23,11 +23,12 @@ function makeSection(header, array) {
     document.body.appendChild(newDiv);
 }
 const sectIntro = [
-    makeCard('你', 'nǐ', 'you'),
-    makeCard('我', 'wo', 'I, my, me'),
-    makeCard('不', 'bu', 'no, not'),
-    makeCard('你', 'nǐ', 'you'),
-    makeCard('我', 'wo', 'I, my, me'),
-    makeCard('不', 'bu', 'no, not')
+    makeChineseCard('你', 'nǐ', 'you'),
+    makeChineseCard('我', 'wo', 'I, my, me'),
+    makeChineseCard('不', 'bu', 'no, not'),
+    makeChineseCard('你', 'nǐ', 'you'),
+    makeChineseCard('我', 'wo', 'I, my, me'),
+    makeChineseCard('不', 'bu', 'no, not')
 ]
-makeSection('Intro', sectIntro);
+//makeSection('Intro', sectIntro);
+//IT IS IN COMMENTS, DON'T WORRY, IT'S NOT BROKEN
